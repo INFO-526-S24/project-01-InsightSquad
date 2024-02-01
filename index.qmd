@@ -1,0 +1,11 @@
+---
+title: "Project title"
+subtitle: "INFO 526 - Project 1"
+author: "Team name"
+format: html
+editor: visual
+---
+
+## Abstract
+
+Add project abstract here.
