@@ -3,6 +3,9 @@ title: "Proposal title"
 subtitle: "Proposal"
 format: html
 editor: visual
+execute: 
+  warning: false
+  message: false
 ---
 
 ```{r}
@@ -16,16 +19,27 @@ library(tidyverse)
 ```{r}
 #| label: load-dataset
 #| message: false
+library(here)
+child_cost <- read.csv(here('Data','childcare_costs.csv'))
 ```
 
 A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
+
+The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018. It provide estimates of childcare prices at the county level by children’s age groups and care setting (home-based or center-based providers).
 
 Make sure to load the data and use inline code for some of this information.
 
 ## Questions
 
-The two questions you want to answer.
+We come up with two hypothesis that through our analysis, we will prove if these hypothesis are correct or not
+
+#### Hypothesis 1: Counties with higher unemployment rates have lower childcare costs.
+
+#### Hypothesis 1: All race have to pay equally for childcare costs
 
 ## Analysis plan
 
 -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+-   For the first Hypothesis, scatter plot of unemployment rates (Which column???) and the childcare costs(Which column??) can show if there is a relationship between these two variable, if so how they are related? This could be done for counties in western, central and eastern US as well as the entire US.
+-   Does specific race have higher costs?
+-   For the second hypothesis: basically has same approach as the first question, but with different variables
