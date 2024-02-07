@@ -1,6 +1,6 @@
 ---
 title: "Childcare Cost Analysis"
-subtitle: "Proposal"
+subtitle: "Project 1 - Proposal"
 format: html
 editor: visual
 execute: 
