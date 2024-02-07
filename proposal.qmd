@@ -29,9 +29,10 @@ child_cost <- read.csv(here('Data','childcare_costs.csv'))
 
 The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018. It provides estimates of childcare prices at the county level by children’s age groups and care settings (home-based or center-based providers).
 
-The dataset comprises various variables, making it suitable for diverse analyses. Although it lacks categorical variables, we can transform some of the variables into categorical format using bins. Moreover, this dataset offers valuable insights into poverty, race, population, and the unemployment rate across the US, enhancing our understanding of these issues.
+The dataset comprises various variables, making it suitable for diverse analyses. Although it lacks categorical variables, we can transform some of the variables into categorical format using bins. Moreover, this dataset offers valuable insights into poverty, race, population, and the unemployment rate across the US, enhancing our understanding of these issues. 
 
-The main variables that will be used and their description are provided in the following table.
+
+We will use some of the provided data to do our analysis, not the whole available data in the files, and the main variables that will be used and their description are provided in the following table. It should be noted there is another CSV file containing the gepgraphical information of each counties, and we will use it for spatial plotting.
 
 |                |                                                                                                                            |
 |----------------|----------------------------------------------------------------------------------------------------------------------------|
