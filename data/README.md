@@ -1,7 +1,7 @@
 # Data
 -   **[Dataset]**: The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018. It provide estimates of childcare prices at the county level by children’s age groups and care setting (home-based or center-based providers).  
 
-# Codebook for [chosen] Dataset
+# Codebook for childcare costs Dataset
 ``` {r}
 childcare_costs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')
 counties <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')
