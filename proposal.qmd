@@ -25,16 +25,33 @@ child_cost <- read.csv(here('Data','childcare_costs.csv'))
 
 The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018. It provide estimates of childcare prices at the county level by children’s age groups and care setting (home-based or center-based providers).
 
+The dataset comprises various variables, making it suitable for diverse analyses. Although it lacks categorical variables, we can transform some of the variables into categorical format using bins. Moreover, this dataset offers valuable insights into poverty, race, population, and the unemployment rate across the US, enhancing our understanding of these issues.
+
+The main variables that will be used and their description are provided in the following table.
+
+|                |                                                                                                                            |
+|--------------|----------------------------------------------------------|
+| Variable       | Description                                                                                                                |
+| unr_16         | Unemployment rate of the population aged 16 years old or older.                                                            |
+| funr_16        | Unemployment rate of the female population aged 16 years old or older.                                                     |
+| munr_16        | Unemployment rate of the male population aged 16 years old or older.                                                       |
+| pr_f           | Poverty rate for families.                                                                                                 |
+| pr_p           | Poverty rate for individuals.                                                                                              |
+| mc_infant      | Aggregated weekly, full-time median price charged for Center-based Care for infants (i.e. aged 0 through 23 months).       |
+| mc_toddler     | Aggregated weekly, full-time median price charged for Center-based Care for toddlers (i.e. aged 24 through 35 months).     |
+| mc_preschool   | Aggregated weekly, full-time median price charged for Center-based Care for preschoolers (i.e. aged 36 through 54 months). |
+| mfcc_infant    | Aggregated weekly, full-time median price charged for Family Childcare for infants (i.e. aged 0 through 23 months).        |
+| mfcc_toddler   | Aggregated weekly, full-time median price charged for Family Childcare for toddlers (i.e. aged 24 through 35 months).      |
+| mfcc_preschool | Aggregated weekly, full-time median price charged for Family Childcare for preschoolers (i.e. aged 36 through 54 months).  |
+
 ## Questions
 
-We come up with two hypothesis that through our analysis, we will prove if these hypothesis are correct or not
+#### Question 1: Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
 
-#### Question 1: Do counties with higher unemployment rates have lower childcare costs?
-
-#### Question  2: Do all race have to pay equally for childcare costs?
+#### Question 2: Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
 
 ## Analysis plan
 
--   For the first question, scatter plot of unemployment rates and the childcare costs can show if there is a relationship between these two variable, if so how they are related? This could be done for counties in western, central and eastern US as well as the entire US.
--   Does specific race have higher costs?
--   For the second question: basically has same approach as the first question, but with different variables
+-   For the first question, we will create spatial maps displaying the mean overall unemployment rate as well as the mean unemployment rates for females and males across the US. Subsequently, for each county, we will calculate the correlation between the overall unemployment rate and individual poverty levels, and a spatial map of these correlations will be plotted.
+
+-   For the second question, we will generate spatial maps showing the average family poverty across the US. Then, for each county, we will calculate the correlation between family poverty and the total costs for children of all ages (including Family Childcare and Center-based Care). A spatial map illustrating these correlations will be plotted.
