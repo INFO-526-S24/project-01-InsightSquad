@@ -44,6 +44,11 @@ The main variables that will be used and their description are provided in the f
 | mfcc_toddler   | Aggregated weekly, full-time median price charged for Family Childcare for toddlers (i.e. aged 24 through 35 months).      |
 | mfcc_preschool | Aggregated weekly, full-time median price charged for Family Childcare for preschoolers (i.e. aged 36 through 54 months).  |
 
+
+## Reason for choosing this Dataset
+
+The reason for choosing this dataset is rooted in its potential to offer comprehensive insights into the intersection of childcare prices, unemployment rates, and poverty levels across different locations in the United States. The dataset covers a significant timeframe (2008 to 2018) and includes variables such as unemployment rates for different demographics, poverty rates for families and individuals, and median prices for center-based and family childcare across various age groups.
+
 ## Questions
 
 #### Question 1: Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
