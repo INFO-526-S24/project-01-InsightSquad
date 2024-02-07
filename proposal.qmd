@@ -1,5 +1,5 @@
 ---
-title: "Proposal title"
+title: "Childcare Cost Analysis"
 subtitle: "Proposal"
 format: html
 editor: visual
