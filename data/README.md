@@ -3,19 +3,13 @@
 
 # Codebook for [chosen] Dataset
 
-{r}
-#| label: load-dataset
-#| message: false
-library(here)
-child_cost <- read.csv(here('Data','childcare_costs.csv'))
+childcare_costs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')
+counties <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')
 
 ## Variable Names and Descriptions:
 
--   **variable**: Description
+-   All the variables has double datatype 
 
-## Data Types:
-
--   **Column**: data type
 
 | Variable    | Description |
 | -------- | ------- |
