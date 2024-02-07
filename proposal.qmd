@@ -1,6 +1,8 @@
 ---
 title: "Childcare Cost Analysis"
 subtitle: "Project 1 - Proposal"
+author: 
+  - name: "Team InsightSquad - Mohammad Farmani, Narasimha Vardhan Rachaputi, Amaan, Devendran, Shreemithra, Gowtham"
 format: html
 editor: visual
 execute: 
@@ -22,7 +24,7 @@ library(tidyverse)
 library(here)
 child_cost <- read.csv(here('Data','childcare_costs.csv'))
 ```
-
+## About the Dataset
 The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018. It provides estimates of childcare prices at the county level by children’s age groups and care settings (home-based or center-based providers).
 
 The dataset comprises various variables, making it suitable for diverse analyses. Although it lacks categorical variables, we can transform some of the variables into categorical format using bins. Moreover, this dataset offers valuable insights into poverty, race, population, and the unemployment rate across the US, enhancing our understanding of these issues.
