@@ -29,20 +29,20 @@ The dataset comprises various variables, making it suitable for diverse analyses
 
 The main variables that will be used and their description are provided in the following table.
 
-|                |                                                                                                                            |
+|                |                                                                                              |
 |-----------------|-------------------------------------------------------|
-| Variable       | Description                                                                                                                |
-| unr_16         | Unemployment rate of the population aged 16 years old or older.                                                            |
-| funr_16        | Unemployment rate of the female population aged 16 years old or older.                                                     |
-| munr_16        | Unemployment rate of the male population aged 16 years old or older.                                                       |
-| pr_f           | Poverty rate for families.                                                                                                 |
-| pr_p           | Poverty rate for individuals.                                                                                              |
-| mc_infant      | Aggregated weekly, full-time median price charged for Center-based Care for infants (i.e. aged 0 through 23 months).       |
-| mc_toddler     | Aggregated weekly, full-time median price charged for Center-based Care for toddlers (i.e. aged 24 through 35 months).     |
-| mc_preschool   | Aggregated weekly, full-time median price charged for Center-based Care for preschoolers (i.e. aged 36 through 54 months). |
-| mfcc_infant    | Aggregated weekly, full-time median price charged for Family Childcare for infants (i.e. aged 0 through 23 months).        |
-| mfcc_toddler   | Aggregated weekly, full-time median price charged for Family Childcare for toddlers (i.e. aged 24 through 35 months).      |
-| mfcc_preschool | Aggregated weekly, full-time median price charged for Family Childcare for preschoolers (i.e. aged 36 through 54 months).  |
+| Variable       | Description                                                                                  |
+| unr_16         | Unemployment rate of the population aged 16 years old or older.                              |
+| funr_16        | Unemployment rate of the female population aged 16 years old or older.                       |
+| munr_16        | Unemployment rate of the male population aged 16 years old or older.                         |
+| pr_f           | Poverty rate for families.                                                                   |
+| pr_p           | Poverty rate for individuals.                                                                |
+| mc_infant      | median price charged for Center-based Care Infants (i.e. aged 0 through 23 months).          |
+| mc_toddler     | Median price charged for Center-based Care Toddlers (i.e. aged 24 through 35 months).        |
+| mc_preschool   | Median price charged for Center-based Care Preschoolers (i.e. aged 36 through 54 months).    |
+| mfcc_infant    | Median price charged for Family Childcare for infants (i.e. aged 0 through 23 months).       |
+| mfcc_toddler   | Median price charged for Family Childcare for toddlers (i.e. aged 24 through 35 months).     |
+| mfcc_preschool | Median price charged for Family Childcare for preschoolers (i.e. aged 36 through 54 months). |
 
 ## Questions
 
