@@ -33,9 +33,9 @@ Make sure to load the data and use inline code for some of this information.
 
 We come up with two hypothesis that through our analysis, we will prove if these hypothesis are correct or not
 
-#### Hypothesis 1: Counties with higher unemployment rates have lower childcare costs.
+#### Question 1: Do counties with higher unemployment rates have lower childcare costs?
 
-#### Hypothesis 1: All race have to pay equally for childcare costs
+#### Question  2: Do all race have to pay equally for childcare costs?
 
 ## Analysis plan
 
