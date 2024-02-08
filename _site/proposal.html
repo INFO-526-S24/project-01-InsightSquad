@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.537">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Team InsightSquad - Mohammad Farmani, Narasimha Vardhan Rachaputi, Amaan, Devendran, Shreemithra, Gowtham">
 
-<title>Project Title - Proposal title</title>
+<title>Project Title - Childcare Cost Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +80,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -101,9 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Project Title</span>
     </a>
@@ -115,32 +123,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Project</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./proposal.html" rel="" target="" aria-current="page">
- <span class="menu-text">Proposal</span></a>
+    <a class="nav-link active" href="./proposal.html" aria-current="page"> 
+<span class="menu-text">Proposal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./presentation.html" rel="" target="">
- <span class="menu-text">Presentation</span></a>
+    <a class="nav-link" href="./presentation.html"> 
+<span class="menu-text">Presentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/INFO526-DataViz/project-01" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/INFO526-DataViz/project-01"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -154,6 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#about-the-dataset" id="toc-about-the-dataset" class="nav-link" data-scroll-target="#about-the-dataset">About the Dataset</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis plan</a></li>
   </ul>
@@ -164,38 +173,182 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proposal title</h1>
-<p class="subtitle lead">Proposal</p>
+<h1 class="title">Childcare Cost Analysis</h1>
+<p class="subtitle lead">Project 1 - Proposal</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Team InsightSquad - Mohammad Farmani, Narasimha Vardhan Rachaputi, Amaan, Devendran, Shreemithra, Gowtham </p>
+          </div>
+  </div>
     
   
     
   </div>
   
 
+
 </header>
+
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.</p>
-<p>Make sure to load the data and use inline code for some of this information.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>child_cost <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">'Data'</span>,<span class="st">'childcare_costs.csv'</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>child_cost<span class="sc">|&gt;</span><span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 34,567
+Columns: 61
+$ county_fips_code          &lt;int&gt; 1001, 1001, 1001, 1001, 1001, 1001, 1001, 10…
+$ study_year                &lt;int&gt; 2008, 2009, 2010, 2011, 2012, 2013, 2014, 20…
+$ unr_16                    &lt;dbl&gt; 5.42, 5.93, 6.21, 7.55, 8.60, 9.39, 8.50, 7.…
+$ funr_16                   &lt;dbl&gt; 4.41, 5.72, 5.57, 8.13, 8.88, 10.31, 9.18, 8…
+$ munr_16                   &lt;dbl&gt; 6.32, 6.11, 6.78, 7.03, 8.29, 8.56, 7.95, 6.…
+$ unr_20to64                &lt;dbl&gt; 4.6, 4.8, 5.1, 6.2, 6.7, 7.3, 6.8, 5.9, 4.4,…
+$ funr_20to64               &lt;dbl&gt; 3.5, 4.6, 4.6, 6.3, 6.4, 7.6, 6.8, 6.1, 4.6,…
+$ munr_20to64               &lt;dbl&gt; 5.6, 5.0, 5.6, 6.1, 7.0, 7.0, 6.8, 5.9, 4.3,…
+$ flfpr_20to64              &lt;dbl&gt; 68.9, 70.8, 71.3, 70.2, 70.6, 70.7, 69.9, 68…
+$ flfpr_20to64_under6       &lt;dbl&gt; 66.9, 63.7, 67.0, 66.5, 67.1, 67.5, 65.2, 66…
+$ flfpr_20to64_6to17        &lt;dbl&gt; 79.59, 78.41, 78.15, 77.62, 76.31, 75.91, 75…
+$ flfpr_20to64_under6_6to17 &lt;dbl&gt; 60.81, 59.91, 59.71, 59.31, 58.30, 58.00, 57…
+$ mlfpr_20to64              &lt;dbl&gt; 84.0, 86.2, 85.8, 85.7, 85.7, 85.0, 84.2, 82…
+$ pr_f                      &lt;dbl&gt; 8.5, 7.5, 7.5, 7.4, 7.4, 8.3, 9.1, 9.3, 9.4,…
+$ pr_p                      &lt;dbl&gt; 11.5, 10.3, 10.6, 10.9, 11.6, 12.1, 12.8, 12…
+$ mhi_2018                  &lt;dbl&gt; 58462.55, 60211.71, 61775.80, 60366.88, 5915…
+$ me_2018                   &lt;dbl&gt; 32710.60, 34688.16, 34740.84, 34564.32, 3432…
+$ fme_2018                  &lt;dbl&gt; 25156.25, 26852.67, 27391.08, 26727.68, 2796…
+$ mme_2018                  &lt;dbl&gt; 41436.80, 43865.64, 46155.24, 45333.12, 4427…
+$ total_pop                 &lt;int&gt; 49744, 49584, 53155, 53944, 54590, 54907, 55…
+$ one_race                  &lt;dbl&gt; 98.1, 98.6, 98.5, 98.5, 98.5, 98.6, 98.7, 98…
+$ one_race_w                &lt;dbl&gt; 78.9, 79.1, 79.1, 78.9, 78.9, 78.3, 78.0, 77…
+$ one_race_b                &lt;dbl&gt; 17.7, 17.9, 17.9, 18.1, 18.1, 18.4, 18.6, 18…
+$ one_race_i                &lt;dbl&gt; 0.4, 0.4, 0.3, 0.2, 0.3, 0.3, 0.4, 0.4, 0.4,…
+$ one_race_a                &lt;dbl&gt; 0.4, 0.6, 0.7, 0.7, 0.8, 1.0, 0.9, 1.0, 0.8,…
+$ one_race_h                &lt;dbl&gt; 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1,…
+$ one_race_other            &lt;dbl&gt; 0.7, 0.7, 0.6, 0.5, 0.4, 0.7, 0.7, 0.9, 1.4,…
+$ two_races                 &lt;dbl&gt; 1.9, 1.4, 1.5, 1.5, 1.5, 1.4, 1.3, 1.6, 2.0,…
+$ hispanic                  &lt;dbl&gt; 1.8, 2.0, 2.3, 2.4, 2.4, 2.5, 2.5, 2.6, 2.6,…
+$ households                &lt;int&gt; 18373, 18288, 19718, 19998, 19934, 20071, 20…
+$ h_under6_both_work        &lt;int&gt; 1543, 1475, 1569, 1695, 1714, 1532, 1557, 13…
+$ h_under6_f_work           &lt;int&gt; 970, 964, 1009, 1060, 938, 880, 1191, 1258, …
+$ h_under6_m_work           &lt;int&gt; 22, 16, 16, 106, 120, 161, 159, 211, 109, 10…
+$ h_under6_single_m         &lt;int&gt; 995, 1099, 1110, 1030, 1095, 1160, 954, 883,…
+$ h_6to17_both_work         &lt;int&gt; 4900, 5028, 5472, 5065, 4608, 4238, 4056, 40…
+$ h_6to17_fwork             &lt;int&gt; 1308, 1519, 1541, 1965, 1963, 1978, 2073, 20…
+$ h_6to17_mwork             &lt;int&gt; 114, 92, 113, 246, 284, 354, 373, 551, 322, …
+$ h_6to17_single_m          &lt;int&gt; 1966, 2305, 2377, 2299, 2644, 2522, 2269, 21…
+$ emp_m                     &lt;dbl&gt; 27.40, 29.54, 29.33, 31.17, 32.13, 31.74, 32…
+$ memp_m                    &lt;dbl&gt; 24.41, 26.07, 25.94, 26.97, 28.59, 27.44, 28…
+$ femp_m                    &lt;dbl&gt; 30.68, 33.40, 33.06, 35.96, 36.09, 36.61, 37…
+$ emp_service               &lt;dbl&gt; 17.06, 15.81, 16.92, 16.18, 16.09, 16.72, 16…
+$ memp_service              &lt;dbl&gt; 15.53, 14.16, 15.09, 14.21, 14.71, 13.92, 13…
+$ femp_service              &lt;dbl&gt; 18.75, 17.64, 18.93, 18.42, 17.63, 19.89, 20…
+$ emp_sales                 &lt;dbl&gt; 29.11, 28.75, 29.07, 27.56, 28.39, 27.22, 25…
+$ memp_sales                &lt;dbl&gt; 15.97, 17.51, 17.82, 17.74, 17.79, 17.38, 15…
+$ femp_sales                &lt;dbl&gt; 43.52, 41.25, 41.43, 38.76, 40.26, 38.36, 36…
+$ emp_n                     &lt;dbl&gt; 13.21, 11.89, 11.57, 10.72, 9.02, 9.27, 9.38…
+$ memp_n                    &lt;dbl&gt; 22.54, 20.30, 19.86, 18.28, 16.03, 16.79, 17…
+$ femp_n                    &lt;dbl&gt; 2.99, 2.52, 2.45, 2.09, 1.19, 0.77, 0.58, 0.…
+$ emp_p                     &lt;dbl&gt; 13.22, 14.02, 13.11, 14.38, 14.37, 15.04, 16…
+$ memp_p                    &lt;dbl&gt; 21.55, 21.96, 21.28, 22.80, 22.88, 24.48, 24…
+$ femp_p                    &lt;dbl&gt; 4.07, 5.19, 4.13, 4.77, 4.84, 4.36, 6.07, 7.…
+$ mcsa                      &lt;dbl&gt; 80.92, 83.42, 85.92, 88.43, 90.93, 93.43, 95…
+$ mfccsa                    &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.82, 1…
+$ mc_infant                 &lt;dbl&gt; 104.95, 105.11, 105.28, 105.45, 105.61, 105.…
+$ mc_toddler                &lt;dbl&gt; 104.95, 105.11, 105.28, 105.45, 105.61, 105.…
+$ mc_preschool              &lt;dbl&gt; 85.92, 87.59, 89.26, 90.93, 92.60, 94.27, 95…
+$ mfcc_infant               &lt;dbl&gt; 83.45, 87.39, 91.33, 95.28, 99.22, 103.16, 1…
+$ mfcc_toddler              &lt;dbl&gt; 83.45, 87.39, 91.33, 95.28, 99.22, 103.16, 1…
+$ mfcc_preschool            &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.82, 1…</code></pre>
+</div>
+</div>
+</section>
+<section id="about-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-dataset">About the Dataset</h2>
+<p>The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018. It provides estimates of childcare prices at the county level by children’s age groups and care settings (home-based or center-based providers).</p>
+<p>The dataset comprises various variables, making it suitable for diverse analyses. Although it lacks categorical variables, we can transform some of the variables into categorical format using bins. Moreover, this dataset offers valuable insights into poverty, race, population, and the unemployment rate across the US, enhancing our understanding of these issues.</p>
+<p>We will use some of the provided data to do our analysis, not the whole available data in the files, and the main variables that will be used and their description are provided in the following table. It should be noted there is another CSV file containing the gepgraphical information of each counties, and we will use it for spatial plotting.</p>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Variable</td>
+<td>Description</td>
+</tr>
+<tr class="even">
+<td>unr_16</td>
+<td>Unemployment rate of the population aged 16 years old or older.</td>
+</tr>
+<tr class="odd">
+<td>funr_16</td>
+<td>Unemployment rate of the female population aged 16 years old or older.</td>
+</tr>
+<tr class="even">
+<td>munr_16</td>
+<td>Unemployment rate of the male population aged 16 years old or older.</td>
+</tr>
+<tr class="odd">
+<td>pr_f</td>
+<td>Poverty rate for families.</td>
+</tr>
+<tr class="even">
+<td>pr_p</td>
+<td>Poverty rate for individuals.</td>
+</tr>
+<tr class="odd">
+<td>mc_infant</td>
+<td>Aggregated weekly, full-time median price charged for Center-based Care for infants (i.e.&nbsp;aged 0 through 23 months).</td>
+</tr>
+<tr class="even">
+<td>mc_toddler</td>
+<td>Aggregated weekly, full-time median price charged for Center-based Care for toddlers (i.e.&nbsp;aged 24 through 35 months).</td>
+</tr>
+<tr class="odd">
+<td>mc_preschool</td>
+<td>Aggregated weekly, full-time median price charged for Center-based Care for preschoolers (i.e.&nbsp;aged 36 through 54 months).</td>
+</tr>
+<tr class="even">
+<td>mfcc_infant</td>
+<td>Aggregated weekly, full-time median price charged for Family Childcare for infants (i.e.&nbsp;aged 0 through 23 months).</td>
+</tr>
+<tr class="odd">
+<td>mfcc_toddler</td>
+<td>Aggregated weekly, full-time median price charged for Family Childcare for toddlers (i.e.&nbsp;aged 24 through 35 months).</td>
+</tr>
+<tr class="even">
+<td>mfcc_preschool</td>
+<td>Aggregated weekly, full-time median price charged for Family Childcare for preschoolers (i.e.&nbsp;aged 36 through 54 months).</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>The two questions you want to answer.</p>
+<section id="question-1-which-locations-have-lower-unemployment-rates-which-gender-experiences-higher-unemployment-rates-in-the-us-is-there-a-relationship-between-the-unemployment-rate-and-poverty" class="level4">
+<h4 class="anchored" data-anchor-id="question-1-which-locations-have-lower-unemployment-rates-which-gender-experiences-higher-unemployment-rates-in-the-us-is-there-a-relationship-between-the-unemployment-rate-and-poverty">Question 1: Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?</h4>
+</section>
+<section id="question-2-which-places-have-higher-rates-of-family-poverty-is-there-a-relationship-between-poverty-and-the-cost-of-raising-children" class="level4">
+<h4 class="anchored" data-anchor-id="question-2-which-places-have-higher-rates-of-family-poverty-is-there-a-relationship-between-poverty-and-the-cost-of-raising-children">Question 2: Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?</h4>
+</section>
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
 <ul>
-<li>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</li>
+<li><p>For the first question, we will create spatial maps displaying the mean overall unemployment rate as well as the mean unemployment rates for females and males across the US. Subsequently, for each county, we will calculate the correlation between the overall unemployment rate and individual poverty levels and a spatial map of these correlations will be plotted.</p></li>
+<li><p>For the second question, We begin by mapping the average family poverty rates across the US using a Spatial map. Subsequently, compute the correlation between family poverty and total child-rearing costs, including Family Childcare and Center-based Care, for each county. Then, we introduce a scatter plot to visualize this relationship, with family poverty rates on the x-axis and child-rearing costs on the y-axis, plotting each county as a point. Then analyze the scatter plot to identify trends and consider adding a trend line for clarity. Optionally, overlay the scatter plot onto the spatial map to juxtapose the relationship with the distribution of family poverty rates across counties. This integrated approach provides a comprehensive understanding of the relationship between family poverty and child-rearing costs while leveraging spatial visualization techniques for enhanced insights.</p></li>
 </ul>
 
 
@@ -281,10 +434,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -294,8 +446,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -308,6 +469,120 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -351,6 +626,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -376,6 +652,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -436,6 +738,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
