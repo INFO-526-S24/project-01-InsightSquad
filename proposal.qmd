@@ -24,16 +24,17 @@ library(tidyverse)
 library(here)
 child_cost <- read.csv(here('Data','childcare_costs.csv'))
 ```
-## About the Dataset
-The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018. It provides estimates of childcare prices at the county level by children’s age groups and care settings (home-based or center-based providers).
+# Dataset Information
 
-The dataset comprises various variables, making it suitable for diverse analyses. Although it lacks categorical variables, we can transform some of the variables into categorical format using bins. Moreover, this dataset offers valuable insights into poverty, race, population, and the unemployment rate across the US, enhancing our understanding of these issues.
+### 1. [Childcare Costs Dataset](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-09/childcare_costs.csv)
+   - **Source:** The National Database of Childcare Prices (NDCP)
+   - **Description:** This dataset is the most comprehensive federal source of childcare prices at the county level. It provides childcare price data by childcare provider type, age of children, and county characteristics. The data spans from 2008 to 2018, offering estimates of childcare prices at the county level for different age groups and care settings, including home-based and center-based providers.
 
-The main variables that will be used and their description are provided in the following table.
+### 2. [Counties Dataset](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-09/counties.csv)
+   - **Description:** This dataset contains geographical information for each county, and it will be used for spatial plotting.
 
-|                |                                                                                                                            |
-|-----------------|-------------------------------------------------------|
 | Variable       | Description                                                                                                                |
+|-----------------|-------------------------------------------------------|
 | unr_16         | Unemployment rate of the population aged 16 years old or older.                                                            |
 | funr_16        | Unemployment rate of the female population aged 16 years old or older.                                                     |
 | munr_16        | Unemployment rate of the male population aged 16 years old or older.                                                       |
@@ -47,18 +48,21 @@ The main variables that will be used and their description are provided in the f
 | mfcc_preschool | Aggregated weekly, full-time median price charged for Family Childcare for preschoolers (i.e. aged 36 through 54 months).  |
 
 
-## Reason for choosing this Dataset
+# Reason for Choosing this Dataset
 
 The reason for choosing this dataset is rooted in its potential to offer comprehensive insights into the intersection of childcare prices, unemployment rates, and poverty levels across different locations in the United States. The dataset covers a significant timeframe (2008 to 2018) and includes variables such as unemployment rates for different demographics, poverty rates for families and individuals, and median prices for center-based and family childcare across various age groups.
 
 ## Questions
 
-#### Question 1: Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
+### Question 1: 
+#### Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
 
-#### Question 2: Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
+### Question 2: 
+#### Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
 
-## Analysis plan
 
--   For the first question, we will create spatial maps displaying the mean overall unemployment rate as well as the mean unemployment rates for females and males across the US. Subsequently, for each county, we will calculate the correlation between the overall unemployment rate and individual poverty levels and a spatial map of these correlations will be plotted.
+## Analysis Plan
+
+-   For the first question, we will create spatial maps displaying the mean overall unemployment rate as well as the mean unemployment rates for females and males across the US. Subsequently, for each county, we will calculate the correlation between the overall unemployment rate and individual poverty levels, and a spatial map of these correlations will be plotted.
 
 -   For the second question, we will generate spatial maps showing the average family poverty across the US. Then, for each county, we will calculate the correlation between family poverty and the total costs for children of all ages including Family Childcare and Center-based Care. A spatial map illustrating these correlations will be plotted.
