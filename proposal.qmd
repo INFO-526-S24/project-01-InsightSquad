@@ -1,14 +1,16 @@
 ---
 title: "Childcare Cost Analysis"
 subtitle: "Project 1 - Proposal"
-author: 
-  - name: "Team InsightSquad - Mohammad Farmani, Narasimha Vardhan Rachaputi, Amaan, Devendran, Shreemithra, Gowtham"
+author:
+  - name: "**Team InsightSquad** - Mohammad Farmani, Narasimha Vardhan Rachaputi, Amaan"
+  - name: "Devendran, Shreemithra, Gowtham"
 format: html
 editor: visual
-execute: 
+execute:
   warning: false
   message: false
 ---
+
 
 ```{r}
 #| label: load-pkgs
