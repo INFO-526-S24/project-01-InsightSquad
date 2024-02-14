@@ -39,7 +39,7 @@ child_cost|>glimpse()
 -   **Description:** This dataset contains geographical information for each county, and it will be used for spatial plotting.
 
 | Variable       | Description                                                                                                                |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | unr_16         | Unemployment rate of the population aged 16 years old or older.                                                            |
 | funr_16        | Unemployment rate of the female population aged 16 years old or older.                                                     |
 | munr_16        | Unemployment rate of the male population aged 16 years old or older.                                                       |
@@ -71,3 +71,11 @@ The reason for choosing this dataset is rooted in its potential to offer compreh
 -   For the first question, we will create spatial maps displaying the mean overall unemployment rate as well as the mean unemployment rates for females and males across the US. Subsequently, for each county, we will calculate the correlation between the overall unemployment rate and individual poverty levels, and a spatial map of these correlations will be plotted.
 
 -   For the second question, we will generate spatial maps showing the average family poverty across the US. Then, for each county, we will calculate the correlation between family poverty and the total costs for children of all ages including Family Childcare and Center-based Care. A spatial map illustrating these correlations will be plotted.
+
+### Timeline
+
+-   Revise and complete the proposal before Monday, Feb 19th.
+
+-   Complete the coding part and generating the plots for both questions before Monday, Feb 26th.
+
+-   Complete the presentation before Monday, March 4th.
