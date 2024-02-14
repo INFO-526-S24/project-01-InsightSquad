@@ -31,7 +31,7 @@ child_cost <- read.csv(here('Data','childcare_costs.csv'))
 child_cost|>glimpse()
 ```
 
-# Dataset Information
+## Dataset Information
 
 ### 1. [Childcare Costs Dataset](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-09/childcare_costs.csv)
 
@@ -56,7 +56,7 @@ child_cost|>glimpse()
 | mfcc_toddler   | Aggregated weekly, full-time median price charged for Family Childcare for toddlers (i.e. aged 24 through 35 months).      |
 | mfcc_preschool | Aggregated weekly, full-time median price charged for Family Childcare for preschoolers (i.e. aged 36 through 54 months).  |
 
-# Reason for Choosing this Dataset
+### Reason for Choosing this Dataset
 
 The reason for choosing this dataset is rooted in its potential to offer comprehensive insights into the intersection of childcare prices, unemployment rates, and poverty levels across different locations in the United States. The dataset covers a significant timeframe (2008 to 2018) and includes variables such as unemployment rates for different demographics, poverty rates for families and individuals, and median prices for center-based and family childcare across various age groups.
 
