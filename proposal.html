@@ -306,8 +306,8 @@ $ mfcc_preschool            &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.8
 </ul>
 <table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 27%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -397,6 +397,9 @@ $ mfcc_preschool            &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.8
 <h4 class="anchored" data-anchor-id="for-question-1">For Question 1</h4>
 <ul>
 <li>We will focus on the distribution of unemployment rates across genders and its relationship with poverty. The methodology includes creating spatial maps to visualize mean unemployment rates (overall, and by gender) across the US. We will then calculate the correlation between the overall unemployment rate and individual poverty levels at the county level, producing spatial maps to display these correlations.</li>
+<li>For “Which locations have lower unemployment rates?”, we will use the “unr_16” variable and the county IDs to plot the spatial map of the overall unemployment rate. We first average the mentioned variable over time, and then the averaged unemployment rate will be used to plot the spatial map.</li>
+<li>For the second part, specifically gender-related, the “munr_16” and “funr_16” variables, as well as county location IDs, will be used to plot the unemployment rates for men and women, respectively. We first average the mentioned variables over time, and then the averaged unemployment rates will be used to plot the spatial map.</li>
+<li>To quantify the relationship between the unemployment rate and poverty, the correlation between individual poverty, “pr_p”, and overall unemployment, “unr_16”, will be calculated for each county, and a spatial map will be plotted.</li>
 </ul>
 </section>
 <section id="for-question-2" class="level4">
