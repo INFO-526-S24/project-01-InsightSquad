@@ -43,7 +43,7 @@ child_cost|>glimpse()
 -   **Description:** This dataset contains geographical information for each county, and it will be used for spatial plotting.
 
 | Variable       | Description                                                                                                                |
-|-------------------|-----------------------------------------------------|
+|--------------------|----------------------------------------------------|
 | unr_16         | Unemployment rate of the population aged 16 years old or older.                                                            |
 | funr_16        | Unemployment rate of the female population aged 16 years old or older.                                                     |
 | munr_16        | Unemployment rate of the male population aged 16 years old or older.                                                       |
@@ -83,6 +83,9 @@ To systematically address our research questions, we will employ spatial analysi
 #### For Question 1
 
 -   We will focus on the distribution of unemployment rates across genders and its relationship with poverty. The methodology includes creating spatial maps to visualize mean unemployment rates (overall, and by gender) across the US. We will then calculate the correlation between the overall unemployment rate and individual poverty levels at the county level, producing spatial maps to display these correlations.
+-   For "Which locations have lower unemployment rates?", we will use the "unr_16" variable and the county IDs to plot the spatial map of the overall unemployment rate. We first average the mentioned variable over time, and then the averaged unemployment rate will be used to plot the spatial map.
+-   For the second part, specifically gender-related, the "munr_16" and "funr_16" variables, as well as county location IDs, will be used to plot the unemployment rates for men and women, respectively. We first average the mentioned variables over time, and then the averaged unemployment rates will be used to plot the spatial map.
+-   To quantify the relationship between the unemployment rate and poverty, the correlation between individual poverty, "pr_p", and overall unemployment, "unr_16", will be calculated for each county, and a spatial map will be plotted.
 
 #### For Question 2
 
