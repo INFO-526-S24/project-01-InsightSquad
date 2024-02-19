@@ -90,6 +90,7 @@ To systematically address our research questions, we will employ spatial analysi
 #### For Question 2
 
 -   The emphasis will be on understanding the dynamics between family poverty rates and the financial burden of childcare. This part involves generating spatial maps to illustrate the average rate of family poverty across the US. Subsequently, we will assess the correlation between family poverty rates and the cumulative childcare costs (encompassing both Family Childcare and Center-based Care) for all age groups at the county level, with spatial maps visualizing these correlations.
+-   To illustrate the family poverty over US, the average of family poverty variable, pr_f, will be computed over the available time period, and then, the poverty of families will be plotted using the county IDs. Moreover, to demonstrate the relation between family poverty and children expenses, the sum of children costs , mc_infant, mc_toddler, mc_preschool, mfcc_infant, mfcc_toddler, and mfcc_preschool, will be calculated and the correlation between sum_of_children_costs and families' poverty will be computed and plotted.
 
 #### Discussion
 
