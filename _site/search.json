@@ -116,7 +116,7 @@
     "href": "presentation.html#code",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Code",
-    "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+    "text": "Code"
   },
   {
     "objectID": "presentation.html#plots",
@@ -159,5 +159,68 @@
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Feeling adventurous?",
     "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+  },
+  {
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "QUESTION 1",
+    "text": "QUESTION 1\nWhich locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?"
+  },
+  {
+    "objectID": "presentation.html#plots-of-question-1",
+    "href": "presentation.html#plots-of-question-1",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plots of question 1",
+    "text": "Plots of question 1"
+  },
+  {
+    "objectID": "presentation.html#plot-2",
+    "href": "presentation.html#plot-2",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plot 2",
+    "text": "Plot 2"
+  },
+  {
+    "objectID": "presentation.html#plot-3",
+    "href": "presentation.html#plot-3",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plot 3",
+    "text": "Plot 3"
+  },
+  {
+    "objectID": "presentation.html#question-2",
+    "href": "presentation.html#question-2",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Question 2",
+    "text": "Question 2\nWhich places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?"
+  },
+  {
+    "objectID": "presentation.html#approach-for-question-2",
+    "href": "presentation.html#approach-for-question-2",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Approach for question 2",
+    "text": "Approach for question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs, visualized through spatial maps."
+  },
+  {
+    "objectID": "presentation.html#plots-of-question-2",
+    "href": "presentation.html#plots-of-question-2",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plots of question 2",
+    "text": "Plots of question 2\n\n\n\n# Calculate average family poverty rate at county level\naverage_poverty_county &lt;- childcare_data %&gt;%\n  group_by(county_fips_code) %&gt;%\n  summarise(avg_pr_f = mean(pr_f, na.rm = TRUE)) %&gt;%\n  mutate(county_fips_code = as.character(county_fips_code))\n\n# Merge with US counties map\ncounties_map &lt;- get_urbn_map(\"counties\")\n\nmerged_data_county &lt;- left_join(counties_map, average_poverty_county, by = c(\"county_fips\" = \"county_fips_code\"))\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
+  },
+  {
+    "objectID": "presentation.html#plot-2-1",
+    "href": "presentation.html#plot-2-1",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plot 2",
+    "text": "Plot 2"
+  },
+  {
+    "objectID": "presentation.html#plot-3-1",
+    "href": "presentation.html#plot-3-1",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plot 3",
+    "text": "Plot 3"
   }
 ]

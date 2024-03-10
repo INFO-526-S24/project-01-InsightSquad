@@ -10,7 +10,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.538">
 
-  <meta name="author" content="Insight Squad - Narasimha Rachaputi Devendran Vemula Mohammad Farmani Shreemithra Gowtham Amaan">
+  <meta name="author" content="–Insight Squad">
   <title>Project Title - Childcare Costs, Unemployment, and Poverty Dynamics in the US</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -320,21 +385,19 @@
       margin-right: 0; 
     }
   </style>
-  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="images/bg.webp" data-background-opacity="0.7" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
+<section id="title-slide" data-background-image="images/bg.webp" data-background-opacity="0.5" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
   <h1 class="title">Childcare Costs, Unemployment, and Poverty Dynamics in the US</h1>
   <p class="subtitle">INFO 526 - Spring 2024 - Project 1</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Insight Squad - Narasimha Rachaputi Devendran Vemula Mohammad Farmani Shreemithra Gowtham Amaan 
+–Insight Squad 
 </div>
 </div>
 </div>
@@ -351,14 +414,9 @@ Insight Squad - Narasimha Rachaputi Devendran Vemula Mohammad Farmani Shreemithr
 </ul>
 </div>
 </section>
-<section id="questions-proposed" class="slide level2">
-<h2>QUESTIONS PROPOSED</h2>
-<div>
-<ol type="1">
-<li class="fragment"><p>Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?</p></li>
-<li class="fragment"><p>Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?</p></li>
-</ol>
-</div>
+<section id="question-1" class="slide level2">
+<h2>QUESTION 1</h2>
+<p>Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?</p>
 </section>
 <section id="approach" class="slide level2">
 <h2>APPROACH</h2>
@@ -366,60 +424,57 @@ Insight Squad - Narasimha Rachaputi Devendran Vemula Mohammad Farmani Shreemithr
 <p>-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders. -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level. -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.</p>
 </div>
 </section>
-<section id="layouts" class="slide level2">
-<h2>Layouts</h2>
-<p>You can use plain text</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<ul>
-<li>or bullet points<sup>1</sup></li>
-</ul>
-</div><div class="column" style="width:60%;">
-<p>or in two columns</p>
-</div>
-</div>
-<ul>
-<li><p>like</p></li>
-<li><p>this</p></li>
-</ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>And add footnotes</p></li></ol></aside></section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 5
-  term        estimate std.error statistic       p.value
-  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;
-1 (Intercept)   25.3      3.08        8.22 0.00000000358
-2 speed         -0.116    0.0642     -1.81 0.0806       </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 12
-  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC
-      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.
-# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="plots" class="slide level2">
-<h2>Plots</h2>
+<section id="plots-of-question-1" class="slide level2">
+<h2>Plots of question 1</h2>
+
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-4-1.png" width="1800" class="r-stretch"></section>
+<section id="plot-2" class="slide level2">
+<h2>Plot 2</h2>
 
 <img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" width="1800" class="r-stretch"></section>
-<section id="plot-and-text" class="slide level2">
-<h2>Plot and text</h2>
+<section id="plot-3" class="slide level2">
+<h2>Plot 3</h2>
+
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-6-1.png" width="1800" class="r-stretch"></section>
+<section id="question-2" class="slide level2">
+<h2>Question 2</h2>
+<p>Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?</p>
+</section>
+<section id="approach-for-question-2" class="slide level2">
+<h2>Approach for question 2</h2>
+<ul>
+<li>Analyzing the link between family poverty rates and childcare costs.</li>
+<li>Creating spatial maps to show average family poverty rates across the US.</li>
+<li>Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.</li>
+</ul>
+</section>
+<section id="plots-of-question-2" class="slide level2">
+<h2>Plots of question 2</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<ul>
-<li><p>Some text</p></li>
-<li><p>goes here</p></li>
-</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Calculate average family poverty rate at county level</span></span>
+<span id="cb1-2"><a></a>average_poverty_county <span class="ot">&lt;-</span> childcare_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">group_by</span>(county_fips_code) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_pr_f =</span> <span class="fu">mean</span>(pr_f, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">mutate</span>(<span class="at">county_fips_code =</span> <span class="fu">as.character</span>(county_fips_code))</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co"># Merge with US counties map</span></span>
+<span id="cb1-8"><a></a>counties_map <span class="ot">&lt;-</span> <span class="fu">get_urbn_map</span>(<span class="st">"counties"</span>)</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a>merged_data_county <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties_map, average_poverty_county, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"county_fips"</span> <span class="ot">=</span> <span class="st">"county_fips_code"</span>))</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="co"># Calculate average family poverty rate at state level</span></span>
+<span id="cb1-13"><a></a>average_poverty_state <span class="ot">&lt;-</span> merged_data_county <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a></a>  <span class="fu">group_by</span>(state_name) <span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_pr_f_state =</span> <span class="fu">mean</span>(avg_pr_f, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-6-1.png" width="1650"></p>
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-8-1.png" width="1650"></p>
 </figure>
 </div>
 </div>
@@ -427,94 +482,14 @@ Insight Squad - Narasimha Rachaputi Devendran Vemula Mohammad Farmani Shreemithr
 </div>
 </div>
 </section>
-<section>
-<section id="a-new-section" class="title-slide slide level1 center">
-<h1>A new section…</h1>
+<section id="plot-2-1" class="slide level2">
+<h2>Plot 2</h2>
 
-</section>
-<section id="tables" class="slide level2">
-<h2>Tables</h2>
-<p>If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">species</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">island</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">bill_length_mm</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">bill_depth_mm</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">flipper_length_mm</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">body_mass_g</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.1</td>
-<td style="text-align: right;">18.7</td>
-<td style="text-align: right;">181</td>
-<td style="text-align: right;">3750</td>
-<td style="text-align: left;">male</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.5</td>
-<td style="text-align: right;">17.4</td>
-<td style="text-align: right;">186</td>
-<td style="text-align: right;">3800</td>
-<td style="text-align: left;">female</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">40.3</td>
-<td style="text-align: right;">18.0</td>
-<td style="text-align: right;">195</td>
-<td style="text-align: right;">3250</td>
-<td style="text-align: left;">female</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">36.7</td>
-<td style="text-align: right;">19.3</td>
-<td style="text-align: right;">193</td>
-<td style="text-align: right;">3450</td>
-<td style="text-align: left;">female</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.3</td>
-<td style="text-align: right;">20.6</td>
-<td style="text-align: right;">190</td>
-<td style="text-align: right;">3650</td>
-<td style="text-align: left;">male</td>
-</tr>
-</tbody>
-</table>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-9-1.png" width="1800" class="r-stretch"></section>
+<section id="plot-3-1" class="slide level2">
+<h2>Plot 3</h2>
 
-
-</div>
-</div>
-</section>
-<section id="images" class="slide level2">
-<h2>Images</h2>
-
-<img data-src="images/watercolour_sys02_img34_teacup-ocean.png" class="quarto-figure quarto-figure-center r-stretch" width="500"><p class="caption">Image credit: Danielle Navarro, Percolate.</p></section>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-10-1.png" width="1800" class="r-stretch"></section>
 <section id="math-expressions" class="slide level2 smaller">
 <h2>Math Expressions</h2>
 <p>You can write LaTeX math expressions inside a pair of dollar signs, e.g.&nbsp;$\alpha+\beta$ renders <span class="math inline">\(\alpha + \beta\)</span>. You can use the display style with double dollar signs:</p>
@@ -527,7 +502,7 @@ Insight Squad - Narasimha Rachaputi Devendran Vemula Mohammad Farmani Shreemithr
 <li><p>The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting <code>$$</code> must appear in the very beginning of a line, followed immediately by a non-space character, and the ending <code>$$</code> must be at the end of a line, led by a non-space character;</p></li>
 <li><p>There should not be spaces after the opening <code>$</code> or before the closing <code>$</code>.</p></li>
 </ol>
-</section></section>
+</section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap up</h1>
@@ -546,7 +521,6 @@ Insight Squad - Narasimha Rachaputi Devendran Vemula Mohammad Farmani Shreemithr
 </div>
 </div>
 </section></section>
-
     </div>
   </div>
 
