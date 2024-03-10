@@ -16,6 +16,8 @@ title-slide-attributes:
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
+    transition: slide
+    background-transition: fade
   
 editor: visual
 execute:
@@ -66,6 +68,12 @@ data("penguins")
 -  The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
 :::
 
+##QUESTIONS PROPOSED
+::: incremental
+1. Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
+
+2. Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
+:::
 
 ## APPROACH
 ::: nonincremental
