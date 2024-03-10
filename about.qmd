@@ -17,3 +17,4 @@ This project was developed by **InsightSquad** For [INFO 526 - Data Analysis and
 -   Amaan Mulla : First-year graduate student pursuing Information Science at University of Arizona.
 
 -   Gowtham Gopalakrishnan : First-year graduate student pursuing Data Science at University of Arizona.
+

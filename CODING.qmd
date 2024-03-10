@@ -1,0 +1,122 @@
+
+```{r}
+#| label: loading-library
+
+pacman::p_load(tidyverse, here, dplyr, ggplot2, ggpointdensity, viridis, ggpubr, sf, tigris, patchwork, usmap,stats)
+
+```
+
+```{r}
+#| label: load_- Dataset
+
+CHLD <- read_csv(here('data','childcare_costs.csv'))
+conty <- read_csv(here('data','counties.csv'))
+
+combine <- merge(CHLD,conty,by=c('county_fips_code'),all.x=T)
+combine <- combine|>filter(!state_name%in%c("Hawaii"))
+```
+
+```{r}
+#| label: Setting ggplot
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 10))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7,        # 7" width
+  fig.asp = 0.618,      # the golden ratio
+  fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300             # higher dpi, sharper image
+)
+```
+
+``` {r}
+#| label: Ploting Scatter plot
+
+
+ggplot(combine,aes(x = pr_p, y = unr_16)) + 
+  geom_point() +
+  geom_pointdensity() +
+  geom_abline (slope=1, linetype = "dashed", color="Red") +
+  scale_color_viridis() +
+  labs(title = "Family Pverty vs Unemployment Rate",
+       subtitle = "Considering all the counties",
+       x = 'Family Poverty(%)',
+       y= 'Unemployment Rate (%)',
+       color = "Density\n"
+       ) +
+  stat_cor(method = "pearson", label.x = 3, label.y = 30)
+ 
+```
+
+
+```{r}
+correlation_data <- combine %>%
+  group_by(county_fips_code) %>%
+  summarize(correlation = cor(pr_p, unr_16))
+
+geo_data <- counties %>%
+  select(county_fips_code, state_abbreviation) %>%
+  left_join(correlation_data, by = "county_fips_code")
+
+state_correlation <- geo_data %>%
+  group_by(state_abbreviation) %>%
+  summarise(mean_cor_state = mean(correlation, na.rm = TRUE))
+
+# Rename 'state_abbreviation' to 'state' for compatibility with usmap
+state_correlation <- state_correlation %>%
+  rename(state = state_abbreviation)
+
+# Plot the state-level map
+state_map <- plot_usmap(data = state_correlation, values = "mean_cor_state", regions = "states") +
+  scale_fill_continuous(name = "Correlation", low = "green", high = "red", na.value = "grey50") +
+  labs(title = "Average Correlation Rate by State",
+       subtitle = "Based on 'pr_p' and 'unr_16 variables from Childcare Costs Dataset") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        plot.title = element_text(hjust = 0.5, size = 16),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+# Display the state-level map
+print(state_map)
+
+```
+
+
+```{r}
+
+options(tigris_class = "sf", tigris_use_cache = TRUE)
+counties_sf <- counties()
+
+correlation_data <- combine %>%
+  group_by(county_fips_code) %>%
+  summarize(correlation = cor(pr_p, unr_16))
+
+Whole <-  merge(combine,correlation_data,  by = c("county_fips_code"))
+com$county_fips_code <- sprintf("%05d", as.numeric(com$county_fips_code))
+
+merged_data <- merge(counties_sf,com, by.x = "GEOID", by.y = "county_fips_code",all.x = FALSE, all.y = FALSE)
+
+#pacman::p_load(tidyverse, here, dplyr, ggplot2, ggpointdensity, viridis, ggpubr, sf, tigris,leaflet,cdlTools,mapdata, maps,stringr,  )
+
+
+states <- states(class = "sf")
+state <- states%>%filter(!NAME %in% c("Puerto Rico","American Samoa", "Commonwealth of the Northern Mariana Islands","United States Virgin Islands","Hawaii","Alaska","Guam"))
+
+ggplot() +
+    geom_sf(data = merged_data, 
+            mapping = aes(fill = correlation), color = "#ffffff") +
+  geom_sf(data = state, fill = NA, color = "#000000") +
+  scale_fill_viridis()+
+  labs(title = "Spatial Map of Correlation",
+       x = 'Longitude',
+       y= 'Lattitude',
+       color = "Correlation\n"
+       ) 
+
+```

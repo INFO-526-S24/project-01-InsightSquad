@@ -43,7 +43,7 @@ child_cost|>glimpse()
 -   **Description:** This dataset contains geographical information for each county, and it will be used for spatial plotting.
 
 | Variable       | Description                                                                                                                |
-|--------------------|----------------------------------------------------|
+|----------------|----------------------------------------------------------------------------------------------------------------------------|
 | unr_16         | Unemployment rate of the population aged 16 years old or older.                                                            |
 | funr_16        | Unemployment rate of the female population aged 16 years old or older.                                                     |
 | munr_16        | Unemployment rate of the male population aged 16 years old or older.                                                       |

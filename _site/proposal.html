@@ -162,21 +162,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#loading-dataset" id="toc-loading-dataset" class="nav-link" data-scroll-target="#loading-dataset">Loading Dataset</a></li>
   <li><a href="#dataset-information" id="toc-dataset-information" class="nav-link" data-scroll-target="#dataset-information">Dataset Information</a>
   <ul class="collapse">
   <li><a href="#childcare-costs-dataset" id="toc-childcare-costs-dataset" class="nav-link" data-scroll-target="#childcare-costs-dataset">1. Childcare Costs Dataset</a></li>
   <li><a href="#counties-dataset" id="toc-counties-dataset" class="nav-link" data-scroll-target="#counties-dataset">2. Counties Dataset</a></li>
+  <li><a href="#reason-for-choosing-this-dataset" id="toc-reason-for-choosing-this-dataset" class="nav-link" data-scroll-target="#reason-for-choosing-this-dataset">Reason for Choosing this Dataset</a></li>
   </ul></li>
-  <li><a href="#reason-for-choosing-this-dataset" id="toc-reason-for-choosing-this-dataset" class="nav-link" data-scroll-target="#reason-for-choosing-this-dataset">Reason for Choosing this Dataset</a>
-  <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
   <ul class="collapse">
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1:</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2:</a></li>
   </ul></li>
   <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis Plan</a></li>
-  </ul></li>
+  <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">Timeline</a></li>
   </ul>
 </nav>
     </div>
@@ -213,8 +213,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="dataset" class="level2">
-<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The objective of this proposal is to explore the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States. By utilizing two main datasets—the National Database of Childcare Prices (NDCP) and a comprehensive Counties Dataset—we aim to uncover patterns and correlations that can inform us about any hidden relationship between these variables. The NDCP dataset, spanning from 2008 to 2018, offers an unparalleled look at childcare prices across the county level, categorized by provider type and age groups, while the Counties Dataset provides essential geographical and demographic insights.</p>
+</section>
+<section id="loading-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="loading-dataset">Loading Dataset</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>child_cost <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">'Data'</span>,<span class="st">'childcare_costs.csv'</span>))</span>
@@ -286,8 +290,8 @@ $ mfcc_preschool            &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.8
 </div>
 </div>
 </section>
-<section id="dataset-information" class="level1">
-<h1>Dataset Information</h1>
+<section id="dataset-information" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-information">Dataset Information</h2>
 <section id="childcare-costs-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="childcare-costs-dataset">1. <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-09/childcare_costs.csv">Childcare Costs Dataset</a></h3>
 <ul>
@@ -302,8 +306,8 @@ $ mfcc_preschool            &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.8
 </ul>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
+<col style="width: 27%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -359,10 +363,11 @@ $ mfcc_preschool            &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.8
 </tbody>
 </table>
 </section>
-</section>
-<section id="reason-for-choosing-this-dataset" class="level1">
-<h1>Reason for Choosing this Dataset</h1>
+<section id="reason-for-choosing-this-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="reason-for-choosing-this-dataset">Reason for Choosing this Dataset</h3>
 <p>The reason for choosing this dataset is rooted in its potential to offer comprehensive insights into the intersection of childcare prices, unemployment rates, and poverty levels across different locations in the United States. The dataset covers a significant timeframe (2008 to 2018) and includes variables such as unemployment rates for different demographics, poverty rates for families and individuals, and median prices for center-based and family childcare across various age groups.</p>
+</section>
+</section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <section id="question-1" class="level3">
@@ -380,13 +385,44 @@ $ mfcc_preschool            &lt;dbl&gt; 81.40, 85.68, 89.96, 94.25, 98.53, 102.8
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h2>
+<section id="introduction-1" class="level4">
+<h4 class="anchored" data-anchor-id="introduction-1">Introduction</h4>
+<p>This section outlines our methodology for investigating the relationships between unemployment rates, poverty levels, and childcare costs across the United States. By examining these variables, we aim to identify patterns that could have significant implications for social policy and economic support systems.</p>
+</section>
+<section id="approach" class="level4">
+<h4 class="anchored" data-anchor-id="approach">Approach</h4>
+<p>To systematically address our research questions, we will employ spatial analysis techniques alongside statistical correlation assessments. The analysis will be conducted in two main parts, corresponding to our central questions:</p>
+</section>
+<section id="for-question-1" class="level4">
+<h4 class="anchored" data-anchor-id="for-question-1">For Question 1</h4>
 <ul>
-<li><p>For the first question, we will create spatial maps displaying the mean overall unemployment rate as well as the mean unemployment rates for females and males across the US. Subsequently, for each county, we will calculate the correlation between the overall unemployment rate and individual poverty levels, and a spatial map of these correlations will be plotted.</p></li>
-<li><p>For the second question, we will generate spatial maps showing the average family poverty across the US. Then, for each county, we will calculate the correlation between family poverty and the total costs for children of all ages including Family Childcare and Center-based Care. A spatial map illustrating these correlations will be plotted.</p></li>
+<li>We will focus on the distribution of unemployment rates across genders and its relationship with poverty. The methodology includes creating spatial maps to visualize mean unemployment rates (overall, and by gender) across the US. We will then calculate the correlation between the overall unemployment rate and individual poverty levels at the county level, producing spatial maps to display these correlations.</li>
+<li>For “Which locations have lower unemployment rates?”, we will use the “unr_16” variable and the county IDs to plot the spatial map of the overall unemployment rate. We first average the mentioned variable over time, and then the averaged unemployment rate will be used to plot the spatial map.</li>
+<li>For the second part, specifically gender-related, the “munr_16” and “funr_16” variables, as well as county location IDs, will be used to plot the unemployment rates for men and women, respectively. We first average the mentioned variables over time, and then the averaged unemployment rates will be used to plot the spatial map.</li>
+<li>To quantify the relationship between the unemployment rate and poverty, the correlation between individual poverty, “pr_p”, and overall unemployment, “unr_16”, will be calculated for each county, and a spatial map will be plotted.</li>
+</ul>
+</section>
+<section id="for-question-2" class="level4">
+<h4 class="anchored" data-anchor-id="for-question-2">For Question 2</h4>
+<ul>
+<li>The emphasis will be on understanding the dynamics between family poverty rates and the financial burden of childcare. This part involves generating spatial maps to illustrate the average rate of family poverty across the US. Subsequently, we will assess the correlation between family poverty rates and the cumulative childcare costs (encompassing both Family Childcare and Center-based Care) for all age groups at the county level, with spatial maps visualizing these correlations.</li>
+<li>To illustrate the family poverty over US, the average of family poverty variable, pr_f, will be computed over the available time period, and then, the poverty of families will be plotted using the county IDs. Moreover, to demonstrate the relation between family poverty and children expenses, the sum of children costs , mc_infant, mc_toddler, mc_preschool, mfcc_infant, mfcc_toddler, and mfcc_preschool, will be calculated and the correlation between sum_of_children_costs and families’ poverty will be computed and plotted.</li>
+</ul>
+</section>
+<section id="discussion" class="level4">
+<h4 class="anchored" data-anchor-id="discussion">Discussion</h4>
+<p>The proposed analysis plan is designed to dissect the intricate web of economic factors influencing family well-being and child-rearing costs. By delving into the spatial and statistical relationships between unemployment, poverty, and childcare expenses, we anticipate uncovering regional disparities and potential areas for policy intervention. The findings from this analysis could provide a robust evidence base for developing targeted strategies to alleviate the economic pressures on families, particularly in regions where the burden of childcare costs significantly intersects with high unemployment and poverty rates. Through this investigation, we aim to contribute to the broader dialogue on enhancing economic security and access to quality childcare, thereby supporting the well-being of families across the United States.</p>
+</section>
+</section>
+<section id="timeline" class="level2">
+<h2 class="anchored" data-anchor-id="timeline">Timeline</h2>
+<ul>
+<li><p>Revise and complete the proposal before Monday, Feb 19th.</p></li>
+<li><p>Complete the coding part and generating the plots for both questions before Monday, Feb 26th.</p></li>
+<li><p>Complete the presentation before Monday, March 4th.</p></li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

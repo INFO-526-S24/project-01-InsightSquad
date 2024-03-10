@@ -1,7 +1,13 @@
 ---
-title: "Project title"
+title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
-author: "Author names"
+author: "Insight Squad - Narasimha Rachaputi
+Devendran Vemula
+Mohammad Farmani
+Shreemithra
+Gowtham
+Amaan
+"
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
   data-background-size: stretch
@@ -10,6 +16,8 @@ title-slide-attributes:
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
+    transition: slide
+    background-transition: fade
   
 editor: visual
 execute:
@@ -52,13 +60,28 @@ mtcars$speed <- mtcars$hp / mtcars$wt
 data("penguins")
 ```
 
-# Using Quarto for presentations
+## INTRODUCTION
+::: incremental
+ -  The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.
+-  Two main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.
+-  The NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.
+-  The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
+:::
 
-## Quarto
+##QUESTIONS PROPOSED
+::: incremental
+1. Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
 
--   The presentation is created using the Quarto CLI
+2. Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
+:::
 
--   `##` sets the start of a new slide
+## APPROACH
+::: nonincremental
+-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.
+-We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.
+-Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
+
+:::
 
 ## Layouts
 
