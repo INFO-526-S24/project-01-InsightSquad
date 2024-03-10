@@ -4,12 +4,16 @@ format: html
 editor: visual
 ---
 
-This project was developed by **\[Team Name\]** For [INFO 526 - Data Analysis and Visualization](https://datavizaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
+This project was developed by **The Insight Squad** For [INFO 526 - Data Analysis and Visualization](https://datavizaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
--   Team member 1: One sentence description of Team member 1 (e.g., year, major, etc.).
+-  Shreemithra Naveen: A first-year, first-semester Master's student in Data Science.
 
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
+-  Mohammad Farmani: One sentence description of Team member 2 (e.g., year, major, etc.).
 
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
+-  Narasimha Vardhan Rachaputi: One sentence description of Team member 3 (e.g., year, major, etc.).
 
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
+-  Devendran  : One sentence description of Team member 4 (e.g., year, major, etc.).
+
+-  Amaan  : One sentence description of Team member 4 (e.g., year, major, etc.).
+
+-  Gowtham  : One sentence description of Team member 4 (e.g., year, major, etc.).
