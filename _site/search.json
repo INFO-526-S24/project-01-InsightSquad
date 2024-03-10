@@ -65,65 +65,65 @@
   {
     "objectID": "presentation.html#quarto",
     "href": "presentation.html#quarto",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Quarto",
     "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
   },
   {
     "objectID": "presentation.html#layouts",
     "href": "presentation.html#layouts",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Layouts",
     "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
   },
   {
     "objectID": "presentation.html#code",
     "href": "presentation.html#code",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Code",
     "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
   },
   {
     "objectID": "presentation.html#plots",
     "href": "presentation.html#plots",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plots",
     "text": "Plots"
   },
   {
     "objectID": "presentation.html#plot-and-text",
     "href": "presentation.html#plot-and-text",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plot and text",
     "text": "Plot and text\n\n\n\nSome text\ngoes here"
   },
   {
     "objectID": "presentation.html#tables",
     "href": "presentation.html#tables",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Tables",
     "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
   },
   {
     "objectID": "presentation.html#images",
     "href": "presentation.html#images",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Images",
     "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
   },
   {
     "objectID": "presentation.html#math-expressions",
     "href": "presentation.html#math-expressions",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Math Expressions",
     "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
   },
   {
     "objectID": "presentation.html#feeling-adventurous",
     "href": "presentation.html#feeling-adventurous",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   },
   {
     "objectID": "about.html",
@@ -131,5 +131,12 @@
     "title": "About",
     "section": "",
     "text": "This project was developed by [Team Name] For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+  },
+  {
+    "objectID": "presentation.html#introduction",
+    "href": "presentation.html#introduction",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "INTRODUCTION",
+    "text": "INTRODUCTION\n\n\nThe objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.\nTwo main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.\nThe NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.\nThe Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups."
   }
 ]
