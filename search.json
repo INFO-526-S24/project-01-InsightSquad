@@ -123,7 +123,7 @@
     "href": "presentation.html#plots",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plots",
-    "text": "Plots"
+    "text": "Plots\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`)."
   },
   {
     "objectID": "presentation.html#plot-and-text",
