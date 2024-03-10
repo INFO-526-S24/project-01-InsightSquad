@@ -1,6 +1,6 @@
 ---
 title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
-subtitle: "INFO 526 - Fall 2023 - Project 1"
+subtitle: "INFO 526 - Spring 2024 - Project 1"
 author: "Insight Squad - Narasimha Rachaputi
 Devendran Vemula
 Mohammad Farmani
@@ -9,7 +9,7 @@ Gowtham
 Amaan
 "
 title-slide-attributes:
-  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-image: images/bg.webp
   data-background-size: stretch
   data-background-opacity: "0.7"
   data-slide-number: none
