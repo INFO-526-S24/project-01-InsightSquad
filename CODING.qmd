@@ -54,9 +54,22 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
 
 
 ```{r}
+
+
+child_cost <- read.csv(here('Data','childcare_costs.csv'))
+counties <- read.csv(here('Data','counties.csv'))
+
+# Calculate average unemployment
+averaged_unemployment <- child_cost %>%
+  group_by(county_fips_code) %>%
+  summarise(mean_unr_16 = mean(unr_16, na.rm = TRUE))
+
 correlation_data <- combine %>%
   group_by(county_fips_code) %>%
   summarize(correlation = cor(pr_p, unr_16))
+
+
+
 
 geo_data <- counties %>%
   select(county_fips_code, state_abbreviation) %>%
@@ -88,35 +101,3 @@ print(state_map)
 ```
 
 
-```{r}
-
-options(tigris_class = "sf", tigris_use_cache = TRUE)
-counties_sf <- counties()
-
-correlation_data <- combine %>%
-  group_by(county_fips_code) %>%
-  summarize(correlation = cor(pr_p, unr_16))
-
-Whole <-  merge(combine,correlation_data,  by = c("county_fips_code"))
-com$county_fips_code <- sprintf("%05d", as.numeric(com$county_fips_code))
-
-merged_data <- merge(counties_sf,com, by.x = "GEOID", by.y = "county_fips_code",all.x = FALSE, all.y = FALSE)
-
-#pacman::p_load(tidyverse, here, dplyr, ggplot2, ggpointdensity, viridis, ggpubr, sf, tigris,leaflet,cdlTools,mapdata, maps,stringr,  )
-
-
-states <- states(class = "sf")
-state <- states%>%filter(!NAME %in% c("Puerto Rico","American Samoa", "Commonwealth of the Northern Mariana Islands","United States Virgin Islands","Hawaii","Alaska","Guam"))
-
-ggplot() +
-    geom_sf(data = merged_data, 
-            mapping = aes(fill = correlation), color = "#ffffff") +
-  geom_sf(data = state, fill = NA, color = "#000000") +
-  scale_fill_viridis()+
-  labs(title = "Spatial Map of Correlation",
-       x = 'Longitude',
-       y= 'Lattitude',
-       color = "Correlation\n"
-       ) 
-
-```
