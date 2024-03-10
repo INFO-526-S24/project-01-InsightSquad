@@ -31,7 +31,11 @@ pacman::p_load(tidymodels,
                here,
                tidyr,
                stats,
-               usmap
+               usmap,
+               ggpointdensity,
+               viridis,
+               ggpubr
+               
                )
 
 devtools::install_github("UrbanInstitute/urbnmapr")
@@ -69,26 +73,25 @@ childcare_data <- child_cost
 ```
 
 ## INTRODUCTION
+
 ::: incremental
- -  The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.
--  Two main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.
--  The NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.
--  The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
+-   The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.
+-   Two main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.
+-   The NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.
+-   The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
 :::
 
 ## QUESTION 1
- Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
 
+Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
 
 ## APPROACH
+
 ::: nonincremental
--Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.
--We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.
--Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
+-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders. -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level. -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
 :::
 
 ## Plots of question 1
-
 
 ```{r}
 # Calculate average unemployment
@@ -128,6 +131,7 @@ print(state_map)
 ```
 
 ## Plot 2
+
 ```{r}
 
 # gender specific unemployment 
@@ -182,15 +186,95 @@ print(male_map)
 print(female_map)
 
 ```
+
+## Scatter Plot
+
+```{r}
+
+CHLD <- read_csv(here('data','childcare_costs.csv'))
+conty <- read_csv(here('data','counties.csv'))
+
+combine <- merge(CHLD,conty,by=c('county_fips_code'),all.x=T)
+combine <- combine|>filter(!state_name%in%c("Hawaii"))
+
+ggplot(combine,aes(x = pr_p, y = unr_16)) + 
+  geom_point() +
+  geom_pointdensity() +
+  geom_abline (slope=1, linetype = "dashed", color="Red") +
+  scale_color_viridis() +
+  labs(title = "Family Pverty vs Unemployment Rate",
+       subtitle = "Considering all the counties",
+       x = 'Family Poverty(%)',
+       y= 'Unemployment Rate (%)',
+       color = "Density\n"
+       ) +
+  stat_cor(method = "pearson", label.x = 3, label.y = 30)
+
+```
+
+## Correlation Map
+
+```{r}
+
+child_cost <- read.csv(here('Data','childcare_costs.csv'))
+counties <- read.csv(here('Data','counties.csv'))
+
+# Calculate average unemployment
+averaged_unemployment <- child_cost %>%
+  group_by(county_fips_code) %>%
+  summarise(mean_unr_16 = mean(unr_16, na.rm = TRUE))
+
+
+child_cost <- read.csv(here('Data','childcare_costs.csv'))
+counties <- read.csv(here('Data','counties.csv'))
+
+correlation_data <- combine %>%
+  group_by(county_fips_code) %>%
+  summarize(correlation = cor(pr_p, unr_16))
+
+
+
+
+geo_data <- counties %>%
+  select(county_fips_code, state_abbreviation) %>%
+  left_join(correlation_data, by = "county_fips_code")
+
+state_correlation <- geo_data %>%
+  group_by(state_abbreviation) %>%
+  summarise(mean_cor_state = mean(correlation, na.rm = TRUE))
+
+# Rename 'state_abbreviation' to 'state' for compatibility with usmap
+state_correlation <- state_correlation %>%
+  rename(state = state_abbreviation)
+
+# Plot the state-level map
+state_map <- plot_usmap(data = state_correlation, values = "mean_cor_state", regions = "states") +
+  scale_fill_continuous(name = "Correlation", low = "green", high = "red", na.value = "grey50") +
+  labs(title = "Average Correlation Rate by State",
+       subtitle = "Based on 'pr_p' and 'unr_16 variables from Childcare Costs Dataset") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        plot.title = element_text(hjust = 0.5, size = 16),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+# Display the state-level map
+print(state_map)
+
+```
+
+## 
+
 ## Question 2
 
 Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
 
 ## Approach for question 2
 
-- Analyzing the link between family poverty rates and childcare costs.
-- Creating spatial maps to show average family poverty rates across the US.
-- Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.
+-   Analyzing the link between family poverty rates and childcare costs.
+-   Creating spatial maps to show average family poverty rates across the US.
+-   Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.
 
 ## Plots of question 2
 
