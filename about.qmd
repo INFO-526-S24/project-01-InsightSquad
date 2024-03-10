@@ -6,7 +6,7 @@ editor: visual
 
 This project was developed by **InsightSquad** For [INFO 526 - Data Analysis and Visualization](https://datavizaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
--   Shreemithra Naveen : A first-year, first-semester Master's student in Data Science
+-   Shreemithra Naveen : A first-year, first-semester Master's student in Data Science at University of Arizona.
 
 -   Mohammad Farmani : Second-year Ph.D. student in Hydrology and atmospheric sciences at University of Arizona.
 
