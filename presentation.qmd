@@ -1,7 +1,7 @@
 ---
 title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
-author: "Narasimha Rachaputi
+author: "Insight Squad - Narasimha Rachaputi
 Devendran Vemula
 Mohammad Farmani
 Shreemithra
