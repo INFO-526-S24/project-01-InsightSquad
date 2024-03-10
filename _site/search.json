@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by The Insight Squad For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nShreemithra Naveen: A first-year, first-semester Master’s student in Data Science.\nMohammad Farmani: One sentence description of Team member 2 (e.g., year, major, etc.).\nNarasimha Vardhan Rachaputi: One sentence description of Team member 3 (e.g., year, major, etc.).\nDevendran : One sentence description of Team member 4 (e.g., year, major, etc.).\nAmaan : One sentence description of Team member 4 (e.g., year, major, etc.).\nGowtham : One sentence description of Team member 4 (e.g., year, major, etc.)."
+  },
+  {
     "objectID": "proposal.html",
     "href": "proposal.html",
     "title": "Childcare Cost Analysis",
@@ -49,46 +56,18 @@
     "text": "Timeline\n\nRevise and complete the proposal before Monday, Feb 19th.\nComplete the coding part and generating the plots for both questions before Monday, Feb 26th.\nComplete the presentation before Monday, March 4th."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Childcare Cost Analysis",
+    "objectID": "presentation.html",
+    "href": "presentation.html",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "",
-    "text": "This data visualization project centers on unraveling patterns in tornado occurrences and their impacts across the United States. Tornadoes are violent, rotating columns of air that form severe thunderstorms capable of producing destructive winds. In this project we delve into two critical aspects: tornado magnitude patterns and the tornado related fatalities in each state . Through innovative visualizations like alley maps and horizontal bar plot, we seek to provide a clearer understanding of tornado phenomena, enabling informed decision-making and proactive disaster management."
-  },
-  {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
-    "title": "Childcare Cost Analysis",
-    "section": "",
-    "text": "This data visualization project centers on unraveling patterns in tornado occurrences and their impacts across the United States. Tornadoes are violent, rotating columns of air that form severe thunderstorms capable of producing destructive winds. In this project we delve into two critical aspects: tornado magnitude patterns and the tornado related fatalities in each state . Through innovative visualizations like alley maps and horizontal bar plot, we seek to provide a clearer understanding of tornado phenomena, enabling informed decision-making and proactive disaster management."
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Childcare Cost Analysis",
-    "section": "Introduction",
-    "text": "Introduction\nThe objective of this proposal is to explore the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States. By utilizing two main datasets—the National Database of Childcare Prices (NDCP) and a comprehensive Counties Dataset—we aim to uncover patterns and correlations that can inform us about any hidden relationship between these variables. The NDCP dataset, spanning from 2008 to 2018, offers an unparalleled look at childcare prices across the state level, categorized by provider type and age groups, while the Counties Dataset provides essential geographical and demographic insights."
-  },
-  {
-    "objectID": "index.html#questions",
-    "href": "index.html#questions",
-    "title": "Childcare Cost Analysis",
-    "section": "Questions",
-    "text": "Questions\n\nQuestion 1: Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?\n\nIntroduction\nThis section outlines our methodology for investigating the relationships between unemployment rates, poverty levels, and childcare costs across the United States. By examining these variables, we aim to identify patterns that could have significant implications for social policy and economic support systems.\n\n\nApproach\n\nWe will focus on the distribution of unemployment rates across genders and its relationship with poverty. The methodology includes creating spatial maps to visualize mean unemployment rates (overall, and by gender) across the US. We will then calculate the correlation between the overall unemployment rate and individual poverty levels at the state level, producing spatial maps to display these correlations.\nFor “Which locations have lower unemployment rates?”, we will use the “unr_16” variable and the state IDs to plot the spatial map of the overall unemployment rate. We first average the mentioned variable over time, and then the averaged unemployment rate will be used to plot the spatial map.\nFor the second part, specifically gender-related, the “munr_16” and “funr_16” variables, as well as state location IDs, will be used to plot the unemployment rates for men and women, respectively. We first average the mentioned variables over time, and then the averaged unemployment rates will be used to plot the spatial map.\nTo quantify the relationship between the unemployment rate and poverty, the correlation between individual poverty, “pr_p”, and overall unemployment, “unr_16”, will be calculated for each state, and a spatial map will be plotted.\n\n\n\nAnalysis\n\n\nDiscussion\n\n\n\nQuestion 2: Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?\n\nIntroduction\nThis section outlines our methodology for investigating the relationships between unemployment rates, poverty levels, and childcare costs across the United States. By examining these variables, we aim to identify patterns that could have significant implications for social policy and economic support systems.\n\n\nApproach\n\nThe emphasis will be on understanding the dynamics between family poverty rates and the financial burden of childcare. This part involves generating spatial maps to illustrate the average rate of family poverty across the US. Subsequently, we will assess the correlation between family poverty rates and the cumulative childcare costs (encompassing both Family Childcare and Center-based Care) for all age groups at the state level, with spatial maps visualizing these correlations.\nTo illustrate the family poverty over US, the average of family poverty variable, pr_f, will be computed over the available time period, and then, the poverty of families will be plotted using the state IDs. Moreover, to demonstrate the relation between family poverty and children expenses, the sum of children costs , mc_infant, mc_toddler, mc_preschool, mfcc_infant, mfcc_toddler, and mfcc_preschool, will be calculated and the correlation between sum_of_children_costs and families’ poverty will be computed and plotted.\n\n\n\nAnalysis\n\n\nDiscussion\nThe proposed analysis plan is designed to dissect the intricate web of economic factors influencing family well-being and child-rearing costs. By delving into the spatial and statistical relationships between unemployment, poverty, and childcare expenses, we anticipate uncovering regional disparities and potential areas for policy intervention. The findings from this analysis could provide a robust evidence base for developing targeted strategies to alleviate the economic pressures on families, particularly in regions where the burden of childcare costs significantly intersects with high unemployment and poverty rates. Through this investigation, we aim to contribute to the broader dialogue on enhancing economic security and access to quality childcare, thereby supporting the well-being of families across the United States."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by The Insight Squad For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nShreemithra Naveen: A first-year, first-semester Master’s student in Data Science.\nMohammad Farmani: One sentence description of Team member 2 (e.g., year, major, etc.).\nNarasimha Vardhan Rachaputi: One sentence description of Team member 3 (e.g., year, major, etc.).\nDevendran : One sentence description of Team member 4 (e.g., year, major, etc.).\nAmaan : One sentence description of Team member 4 (e.g., year, major, etc.).\nGowtham : One sentence description of Team member 4 (e.g., year, major, etc.)."
+    "text": "The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.\nTwo main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.\nThe NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.\nThe Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups."
   },
   {
     "objectID": "presentation.html#introduction",
     "href": "presentation.html#introduction",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "INTRODUCTION",
-    "text": "INTRODUCTION\n\n\nThe objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.\nTwo main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.\nThe NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.\nThe Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups."
+    "section": "",
+    "text": "The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.\nTwo main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.\nThe NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.\nThe Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups."
   },
   {
     "objectID": "presentation.html#questions-proposed",
@@ -109,7 +88,7 @@
     "href": "presentation.html#layouts",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis"
   },
   {
     "objectID": "presentation.html#code",
@@ -123,7 +102,7 @@
     "href": "presentation.html#plots",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plots",
-    "text": "Plots"
+    "text": "Plots\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`)."
   },
   {
     "objectID": "presentation.html#plot-and-text",
@@ -144,7 +123,7 @@
     "href": "presentation.html#images",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
+    "text": "Images\n\n\n\nImage credit: Danielle Navarro, Percolate."
   },
   {
     "objectID": "presentation.html#math-expressions",
@@ -159,5 +138,12 @@
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Feeling adventurous?",
     "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+  },
+  {
+    "objectID": "presentation.html#footnotes",
+    "href": "presentation.html#footnotes",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAnd add footnotes↩︎"
   }
 ]
