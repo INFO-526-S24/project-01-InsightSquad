@@ -1,2 +1,6 @@
-proposal.html
-about.html
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/

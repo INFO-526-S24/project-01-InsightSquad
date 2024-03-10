@@ -1,0 +1,188 @@
+---
+title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
+subtitle: "INFO 526 - Fall 2023 - Project 1"
+author: "Insight Squad - Narasimha Rachaputi
+Devendran Vemula
+Mohammad Farmani
+Shreemithra
+Gowtham
+Amaan
+"
+title-slide-attributes:
+  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-size: stretch
+  data-background-opacity: "0.7"
+  data-slide-number: none
+format:
+  revealjs:
+    theme:  ['data/customtheming.scss']
+    transition: slide
+    background-transition: fade
+  
+editor: visual
+execute:
+  echo: false
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+
+# Load packages here
+pacman::p_load(tidymodels,
+               tidyverse)
+
+```
+
+```{r}
+#| label: setup
+#| include: false
+
+# Plot theme
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 11))
+
+# For better figure resolution
+knitr::opts_chunk$set(
+  fig.retina = 3, 
+  dpi = 300, 
+  fig.width = 6, 
+  fig.asp = 0.618 
+  )
+```
+
+```{r}
+#| label: load-data
+#| include: false
+# Load data here
+data(mtcars)
+mtcars$speed <- mtcars$hp / mtcars$wt
+
+data("penguins")
+```
+
+## INTRODUCTION
+::: incremental
+ -  The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.
+-  Two main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.
+-  The NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.
+-  The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
+:::
+
+## QUESTIONS PROPOSED
+::: incremental
+1. Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
+
+2. Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
+:::
+
+## APPROACH
+::: nonincremental
+-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.
+-We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.
+-Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
+
+:::
+
+## Layouts
+
+You can use plain text
+
+::: columns
+::: {.column width="40%"}
+-   or bullet points[^1]
+:::
+
+::: {.column width="60%"}
+or in two columns
+:::
+:::
+
+[^1]: And add footnotes
+
+-   like
+
+-   this
+
+## Code
+
+```{r, echo=FALSE}
+model <- lm(mpg ~ speed, data = mtcars) 
+
+model |> tidy()
+
+model |> glance()
+
+```
+
+## Plots
+
+```{r}
+penguins |>
+  mutate(species = ifelse(species == "Adelie", "Adelie", "Other")) |>
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point()
+```
+
+## Plot and text
+
+::: columns
+::: {.column width="50%"}
+-   Some text
+
+-   goes here
+:::
+
+::: {.column width="50%"}
+```{r, warning=FALSE, fig.width=5.5}
+penguins |>
+  ggplot(aes(x = bill_length_mm, y = species, color = species)) +
+  geom_boxplot(linewidth = 0.75,
+               outlier.size = 2.5) +
+  theme_minimal(base_size = 15) +
+  theme(legend.key.size = unit(0.8, "cm"))
+```
+:::
+:::
+
+# A new section...
+
+## Tables
+
+If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+
+```{r}
+penguins |> 
+  head() |>
+  kableExtra::kable() |>
+  kableExtra::kable_styling()
+```
+
+## Images
+
+![Image credit: Danielle Navarro, Percolate.](images/watercolour_sys02_img34_teacup-ocean.png){fig-align="center" width="500"}
+
+## Math Expressions {.smaller}
+
+You can write LaTeX math expressions inside a pair of dollar signs, e.g. \$\\alpha+\\beta\$ renders $\alpha + \beta$. You can use the display style with double dollar signs:
+
+```         
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+
+$$
+\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
+$$
+
+Limitations:
+
+1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+
+2.  There should not be spaces after the opening `$` or before the closing `$`.
+
+# Wrap up
+
+## Feeling adventurous?
+
+-   You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
+
+-   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.
