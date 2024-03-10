@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.537">
+<meta name="generator" content="quarto-1.4.538">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>The objective of this proposal is to explore the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States. By utilizing two main datasets—the National Database of Childcare Prices (NDCP) and a comprehensive Counties Dataset—we aim to uncover patterns and correlations that can inform us about any hidden relationship between these variables. The NDCP dataset, spanning from 2008 to 2018, offers an unparalleled look at childcare prices across the county level, categorized by provider type and age groups, while the Counties Dataset provides essential geographical and demographic insights.</p>
+<p>The objective of this proposal is to explore the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States. By utilizing two main datasets—the National Database of Childcare Prices (NDCP) and a comprehensive Counties Dataset—we aim to uncover patterns and correlations that can inform us about any hidden relationship between these variables. The NDCP dataset, spanning from 2008 to 2018, offers an unparalleled look at childcare prices across the state level, categorized by provider type and age groups, while the Counties Dataset provides essential geographical and demographic insights.</p>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
@@ -187,10 +187,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="approach" class="level4">
 <h4 class="anchored" data-anchor-id="approach">Approach</h4>
 <ul>
-<li>We will focus on the distribution of unemployment rates across genders and its relationship with poverty. The methodology includes creating spatial maps to visualize mean unemployment rates (overall, and by gender) across the US. We will then calculate the correlation between the overall unemployment rate and individual poverty levels at the county level, producing spatial maps to display these correlations.</li>
-<li>For “Which locations have lower unemployment rates?”, we will use the “unr_16” variable and the county IDs to plot the spatial map of the overall unemployment rate. We first average the mentioned variable over time, and then the averaged unemployment rate will be used to plot the spatial map.</li>
-<li>For the second part, specifically gender-related, the “munr_16” and “funr_16” variables, as well as county location IDs, will be used to plot the unemployment rates for men and women, respectively. We first average the mentioned variables over time, and then the averaged unemployment rates will be used to plot the spatial map.</li>
-<li>To quantify the relationship between the unemployment rate and poverty, the correlation between individual poverty, “pr_p”, and overall unemployment, “unr_16”, will be calculated for each county, and a spatial map will be plotted.</li>
+<li>We will focus on the distribution of unemployment rates across genders and its relationship with poverty. The methodology includes creating spatial maps to visualize mean unemployment rates (overall, and by gender) across the US. We will then calculate the correlation between the overall unemployment rate and individual poverty levels at the state level, producing spatial maps to display these correlations.</li>
+<li>For “Which locations have lower unemployment rates?”, we will use the “unr_16” variable and the state IDs to plot the spatial map of the overall unemployment rate. We first average the mentioned variable over time, and then the averaged unemployment rate will be used to plot the spatial map.</li>
+<li>For the second part, specifically gender-related, the “munr_16” and “funr_16” variables, as well as state location IDs, will be used to plot the unemployment rates for men and women, respectively. We first average the mentioned variables over time, and then the averaged unemployment rates will be used to plot the spatial map.</li>
+<li>To quantify the relationship between the unemployment rate and poverty, the correlation between individual poverty, “pr_p”, and overall unemployment, “unr_16”, will be calculated for each state, and a spatial map will be plotted.</li>
 </ul>
 </section>
 <section id="analysis" class="level4">
@@ -209,8 +209,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="approach-1" class="level4">
 <h4 class="anchored" data-anchor-id="approach-1">Approach</h4>
 <ul>
-<li>The emphasis will be on understanding the dynamics between family poverty rates and the financial burden of childcare. This part involves generating spatial maps to illustrate the average rate of family poverty across the US. Subsequently, we will assess the correlation between family poverty rates and the cumulative childcare costs (encompassing both Family Childcare and Center-based Care) for all age groups at the county level, with spatial maps visualizing these correlations.</li>
-<li>To illustrate the family poverty over US, the average of family poverty variable, pr_f, will be computed over the available time period, and then, the poverty of families will be plotted using the county IDs. Moreover, to demonstrate the relation between family poverty and children expenses, the sum of children costs , mc_infant, mc_toddler, mc_preschool, mfcc_infant, mfcc_toddler, and mfcc_preschool, will be calculated and the correlation between sum_of_children_costs and families’ poverty will be computed and plotted.</li>
+<li>The emphasis will be on understanding the dynamics between family poverty rates and the financial burden of childcare. This part involves generating spatial maps to illustrate the average rate of family poverty across the US. Subsequently, we will assess the correlation between family poverty rates and the cumulative childcare costs (encompassing both Family Childcare and Center-based Care) for all age groups at the state level, with spatial maps visualizing these correlations.</li>
+<li>To illustrate the family poverty over US, the average of family poverty variable, pr_f, will be computed over the available time period, and then, the poverty of families will be plotted using the state IDs. Moreover, to demonstrate the relation between family poverty and children expenses, the sum of children costs , mc_infant, mc_toddler, mc_preschool, mfcc_infant, mfcc_toddler, and mfcc_preschool, will be calculated and the correlation between sum_of_children_costs and families’ poverty will be computed and plotted.</li>
 </ul>
 </section>
 <section id="analysis-1" class="level4">
