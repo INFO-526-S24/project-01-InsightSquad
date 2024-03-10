@@ -91,11 +91,11 @@
     "text": "INTRODUCTION\n\n\nThe objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.\nTwo main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.\nThe NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.\nThe Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups."
   },
   {
-    "objectID": "presentation.html#questions-proposed",
-    "href": "presentation.html#questions-proposed",
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "QUESTIONS PROPOSED",
-    "text": "QUESTIONS PROPOSED\n\n\nWhich locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?\nWhich places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?"
+    "section": "QUESTION 1",
+    "text": "QUESTION 1\nWhich locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?"
   },
   {
     "objectID": "presentation.html#approach",
@@ -105,46 +105,60 @@
     "text": "APPROACH\n\n-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders. -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level. -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty."
   },
   {
-    "objectID": "presentation.html#layouts",
-    "href": "presentation.html#layouts",
+    "objectID": "presentation.html#plots-of-question-1",
+    "href": "presentation.html#plots-of-question-1",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+    "section": "Plots of question 1",
+    "text": "Plots of question 1"
   },
   {
-    "objectID": "presentation.html#code",
-    "href": "presentation.html#code",
+    "objectID": "presentation.html#plot-2",
+    "href": "presentation.html#plot-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Code",
-    "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+    "section": "Plot 2",
+    "text": "Plot 2"
   },
   {
-    "objectID": "presentation.html#plots",
-    "href": "presentation.html#plots",
+    "objectID": "presentation.html#plot-3",
+    "href": "presentation.html#plot-3",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plots",
-    "text": "Plots\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`)."
+    "section": "Plot 3",
+    "text": "Plot 3"
   },
   {
-    "objectID": "presentation.html#plot-and-text",
-    "href": "presentation.html#plot-and-text",
+    "objectID": "presentation.html#question-2",
+    "href": "presentation.html#question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
+    "section": "Question 2",
+    "text": "Question 2\nWhich places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?"
   },
   {
-    "objectID": "presentation.html#tables",
-    "href": "presentation.html#tables",
+    "objectID": "presentation.html#approach-for-question-2",
+    "href": "presentation.html#approach-for-question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Tables",
-    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
+    "section": "Approach for question 2",
+    "text": "Approach for question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs, visualized through spatial maps."
   },
   {
-    "objectID": "presentation.html#images",
-    "href": "presentation.html#images",
+    "objectID": "presentation.html#plots-of-question-2",
+    "href": "presentation.html#plots-of-question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
+    "section": "Plots of question 2",
+    "text": "Plots of question 2\n\n\n\n# Calculate average family poverty rate at county level\naverage_poverty_county &lt;- childcare_data %&gt;%\n  group_by(county_fips_code) %&gt;%\n  summarise(avg_pr_f = mean(pr_f, na.rm = TRUE)) %&gt;%\n  mutate(county_fips_code = as.character(county_fips_code))\n\n# Merge with US counties map\ncounties_map &lt;- get_urbn_map(\"counties\")\n\nmerged_data_county &lt;- left_join(counties_map, average_poverty_county, by = c(\"county_fips\" = \"county_fips_code\"))\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
+  },
+  {
+    "objectID": "presentation.html#plot-2-1",
+    "href": "presentation.html#plot-2-1",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plot 2",
+    "text": "Plot 2"
+  },
+  {
+    "objectID": "presentation.html#plot-3-1",
+    "href": "presentation.html#plot-3-1",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Plot 3",
+    "text": "Plot 3"
   },
   {
     "objectID": "presentation.html#math-expressions",
