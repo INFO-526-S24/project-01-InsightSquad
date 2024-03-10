@@ -49,87 +49,122 @@
     "text": "Timeline\n\nRevise and complete the proposal before Monday, Feb 19th.\nComplete the coding part and generating the plots for both questions before Monday, Feb 26th.\nComplete the presentation before Monday, March 4th."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Project title",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Add project abstract here."
+    "text": "This project was developed by The Insight Squad For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nShreemithra Naveen: A first-year, first-semester Master’s student in Data Science.\nMohammad Farmani: One sentence description of Team member 2 (e.g., year, major, etc.).\nNarasimha Vardhan Rachaputi: One sentence description of Team member 3 (e.g., year, major, etc.).\nDevendran : One sentence description of Team member 4 (e.g., year, major, etc.).\nAmaan : One sentence description of Team member 4 (e.g., year, major, etc.).\nGowtham : One sentence description of Team member 4 (e.g., year, major, etc.)."
   },
   {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
-    "title": "Project title",
-    "section": "",
-    "text": "Add project abstract here."
+    "objectID": "presentation.html#introduction",
+    "href": "presentation.html#introduction",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "INTRODUCTION",
+    "text": "INTRODUCTION\n\n\nThe objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.\nTwo main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.\nThe NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.\nThe Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups."
   },
   {
-    "objectID": "presentation.html#quarto",
-    "href": "presentation.html#quarto",
-    "title": "Project title",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+    "objectID": "presentation.html#questions-proposed",
+    "href": "presentation.html#questions-proposed",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "QUESTIONS PROPOSED",
+    "text": "QUESTIONS PROPOSED\n\n\nWhich locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?\nWhich places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?"
+  },
+  {
+    "objectID": "presentation.html#approach",
+    "href": "presentation.html#approach",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "APPROACH",
+    "text": "APPROACH\n\n-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders. -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level. -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty."
   },
   {
     "objectID": "presentation.html#layouts",
     "href": "presentation.html#layouts",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Layouts",
     "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
   },
   {
     "objectID": "presentation.html#code",
     "href": "presentation.html#code",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Code",
     "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
   },
   {
     "objectID": "presentation.html#plots",
     "href": "presentation.html#plots",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plots",
     "text": "Plots"
   },
   {
     "objectID": "presentation.html#plot-and-text",
     "href": "presentation.html#plot-and-text",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plot and text",
     "text": "Plot and text\n\n\n\nSome text\ngoes here"
   },
   {
     "objectID": "presentation.html#tables",
     "href": "presentation.html#tables",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Tables",
     "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
   },
   {
     "objectID": "presentation.html#images",
     "href": "presentation.html#images",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Images",
     "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
   },
   {
     "objectID": "presentation.html#math-expressions",
     "href": "presentation.html#math-expressions",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Math Expressions",
     "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
   },
   {
     "objectID": "presentation.html#feeling-adventurous",
     "href": "presentation.html#feeling-adventurous",
-    "title": "Project title",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Childcare Cost Analysis",
     "section": "",
-    "text": "This project was developed by [Team Name] For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+    "text": "This data visualization project centers on unraveling patterns in tornado occurrences and their impacts across the United States. Tornadoes are violent, rotating columns of air that form severe thunderstorms capable of producing destructive winds. In this project we delve into two critical aspects: tornado magnitude patterns and the tornado related fatalities in each state . Through innovative visualizations like alley maps and horizontal bar plot, we seek to provide a clearer understanding of tornado phenomena, enabling informed decision-making and proactive disaster management."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Childcare Cost Analysis",
+    "section": "",
+    "text": "This data visualization project centers on unraveling patterns in tornado occurrences and their impacts across the United States. Tornadoes are violent, rotating columns of air that form severe thunderstorms capable of producing destructive winds. In this project we delve into two critical aspects: tornado magnitude patterns and the tornado related fatalities in each state . Through innovative visualizations like alley maps and horizontal bar plot, we seek to provide a clearer understanding of tornado phenomena, enabling informed decision-making and proactive disaster management."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Childcare Cost Analysis",
+    "section": "Introduction",
+    "text": "Introduction\nThe objective of this proposal is to explore the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States. By utilizing two main datasets—the National Database of Childcare Prices (NDCP) and a comprehensive Counties Dataset—we aim to uncover patterns and correlations that can inform us about any hidden relationship between these variables. The NDCP dataset, spanning from 2008 to 2018, offers an unparalleled look at childcare prices across the county level, categorized by provider type and age groups, while the Counties Dataset provides essential geographical and demographic insights."
+  },
+  {
+    "objectID": "index.html#questions",
+    "href": "index.html#questions",
+    "title": "Childcare Cost Analysis",
+    "section": "Questions",
+    "text": "Questions\n\nQuestion 1: Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?\n\nIntroduction\nThis section outlines our methodology for investigating the relationships between unemployment rates, poverty levels, and childcare costs across the United States. By examining these variables, we aim to identify patterns that could have significant implications for social policy and economic support systems.\n\n\nApproach\n\nWe will focus on the distribution of unemployment rates across genders and its relationship with poverty. The methodology includes creating spatial maps to visualize mean unemployment rates (overall, and by gender) across the US. We will then calculate the correlation between the overall unemployment rate and individual poverty levels at the county level, producing spatial maps to display these correlations.\nFor “Which locations have lower unemployment rates?”, we will use the “unr_16” variable and the county IDs to plot the spatial map of the overall unemployment rate. We first average the mentioned variable over time, and then the averaged unemployment rate will be used to plot the spatial map.\nFor the second part, specifically gender-related, the “munr_16” and “funr_16” variables, as well as county location IDs, will be used to plot the unemployment rates for men and women, respectively. We first average the mentioned variables over time, and then the averaged unemployment rates will be used to plot the spatial map.\nTo quantify the relationship between the unemployment rate and poverty, the correlation between individual poverty, “pr_p”, and overall unemployment, “unr_16”, will be calculated for each county, and a spatial map will be plotted.\n\n\n\nAnalysis\n\n\nDiscussion\n\n\n\nQuestion 2: Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?\n\nIntroduction\nThis section outlines our methodology for investigating the relationships between unemployment rates, poverty levels, and childcare costs across the United States. By examining these variables, we aim to identify patterns that could have significant implications for social policy and economic support systems.\n\n\nApproach\n\nThe emphasis will be on understanding the dynamics between family poverty rates and the financial burden of childcare. This part involves generating spatial maps to illustrate the average rate of family poverty across the US. Subsequently, we will assess the correlation between family poverty rates and the cumulative childcare costs (encompassing both Family Childcare and Center-based Care) for all age groups at the county level, with spatial maps visualizing these correlations.\nTo illustrate the family poverty over US, the average of family poverty variable, pr_f, will be computed over the available time period, and then, the poverty of families will be plotted using the county IDs. Moreover, to demonstrate the relation between family poverty and children expenses, the sum of children costs , mc_infant, mc_toddler, mc_preschool, mfcc_infant, mfcc_toddler, and mfcc_preschool, will be calculated and the correlation between sum_of_children_costs and families’ poverty will be computed and plotted.\n\n\n\nAnalysis\n\n\nDiscussion\nThe proposed analysis plan is designed to dissect the intricate web of economic factors influencing family well-being and child-rearing costs. By delving into the spatial and statistical relationships between unemployment, poverty, and childcare expenses, we anticipate uncovering regional disparities and potential areas for policy intervention. The findings from this analysis could provide a robust evidence base for developing targeted strategies to alleviate the economic pressures on families, particularly in regions where the burden of childcare costs significantly intersects with high unemployment and poverty rates. Through this investigation, we aim to contribute to the broader dialogue on enhancing economic security and access to quality childcare, thereby supporting the well-being of families across the United States."
+  },
+  {
+    "objectID": "CODING.html",
+    "href": "CODING.html",
+    "title": "Project Title",
+    "section": "",
+    "text": "pacman::p_load(tidyverse, here, dplyr, ggplot2, ggpointdensity, viridis, ggpubr, sf, tigris, patchwork, usmap,stats)\n\n\nCHLD &lt;- read_csv(here('data','childcare_costs.csv'))\n\nRows: 34567 Columns: 61\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\ndbl (61): county_fips_code, study_year, unr_16, funr_16, munr_16, unr_20to64...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nconty &lt;- read_csv(here('data','counties.csv'))\n\nRows: 3144 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): county_name, state_name, state_abbreviation\ndbl (1): county_fips_code\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ncombine &lt;- merge(CHLD,conty,by=c('county_fips_code'),all.x=T)\ncombine &lt;- combine|&gt;filter(!state_name%in%c(\"Hawaii\"))\n\n\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 10))\n\n# set width of code output\noptions(width = 65)\n\n# set figure parameters for knitr\nknitr::opts_chunk$set(\n  fig.width = 7,        # 7\" width\n  fig.asp = 0.618,      # the golden ratio\n  fig.retina = 3,       # dpi multiplier for displaying HTML output on retina\n  fig.align = \"center\", # center align figures\n  dpi = 300             # higher dpi, sharper image\n)\n\n\nggplot(combine,aes(x = pr_p, y = unr_16)) + \n  geom_point() +\n  geom_pointdensity() +\n  geom_abline (slope=1, linetype = \"dashed\", color=\"Red\") +\n  scale_color_viridis() +\n  labs(title = \"Family Pverty vs Unemployment Rate\",\n       subtitle = \"Considering all the counties\",\n       x = 'Family Poverty(%)',\n       y= 'Unemployment Rate (%)',\n       color = \"Density\\n\"\n       ) +\n  stat_cor(method = \"pearson\", label.x = 3, label.y = 30)\n\n\n\n\n\n\n\n\n\nchild_cost &lt;- read.csv(here('Data','childcare_costs.csv'))\ncounties &lt;- read.csv(here('Data','counties.csv'))\n\n# Calculate average unemployment\naveraged_unemployment &lt;- child_cost %&gt;%\n  group_by(county_fips_code) %&gt;%\n  summarise(mean_unr_16 = mean(unr_16, na.rm = TRUE))\n\ncorrelation_data &lt;- combine %&gt;%\n  group_by(county_fips_code) %&gt;%\n  summarize(correlation = cor(pr_p, unr_16))\n\n\n\n\ngeo_data &lt;- counties %&gt;%\n  select(county_fips_code, state_abbreviation) %&gt;%\n  left_join(correlation_data, by = \"county_fips_code\")\n\nstate_correlation &lt;- geo_data %&gt;%\n  group_by(state_abbreviation) %&gt;%\n  summarise(mean_cor_state = mean(correlation, na.rm = TRUE))\n\n# Rename 'state_abbreviation' to 'state' for compatibility with usmap\nstate_correlation &lt;- state_correlation %&gt;%\n  rename(state = state_abbreviation)\n\n# Plot the state-level map\nstate_map &lt;- plot_usmap(data = state_correlation, values = \"mean_cor_state\", regions = \"states\") +\n  scale_fill_continuous(name = \"Correlation\", low = \"green\", high = \"red\", na.value = \"grey50\") +\n  labs(title = \"Average Correlation Rate by State\",\n       subtitle = \"Based on 'pr_p' and 'unr_16 variables from Childcare Costs Dataset\") +\n  theme_minimal() +\n  theme(legend.position = \"right\",\n        plot.title = element_text(hjust = 0.5, size = 16),\n        plot.subtitle = element_text(hjust = 0.5, size = 12),\n        legend.title = element_text(size = 12),\n        legend.text = element_text(size = 10))\n\n# Display the state-level map\nprint(state_map)"
   }
 ]
