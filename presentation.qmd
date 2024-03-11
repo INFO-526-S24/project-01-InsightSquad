@@ -1,7 +1,7 @@
 ---
 title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
 subtitle: "INFO 526 - Spring 2024 - Project 1"
-author: "Narasimha Rachaputi,Devendran Vemula,Mohammad Farmani,Shreemithra Naveen, Amaan Mulla,Gautham --Insight Squad"
+author: "Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham --Insight Squad"
 
 title-slide-attributes:
   data-background-image: images/bg.webp
@@ -90,9 +90,9 @@ Which locations have lower unemployment rates? Which gender experiences higher u
 ## APPROACH
 
 ::: nonincremental
--Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.  
--We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.  
--Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
+- Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.  
+- We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.  
+- Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
 :::
 
 ## Plots of Question 1
@@ -269,8 +269,6 @@ print(state_map)
 
 ```
 
-## 
-
 ## Question 2
 
 Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
@@ -360,6 +358,7 @@ ggplot(data = merged_data_childcare_costs_state, aes(fill = avg_childcare_costs_
 ```{r}
 
 # 3rd graph
+
 correlation_data <- merge(average_poverty_state, average_childcare_costs_state, by = "state_name")
 
 states_map <- get_urbn_map("states", sf = TRUE)
@@ -375,24 +374,6 @@ ggplot(data = merged_data_correlation, aes(fill = avg_pr_f_state, color = avg_ch
   theme_minimal()
 
 ```
-
-## Math Expressions {.smaller}
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. \$\\alpha+\\beta\$ renders $\alpha + \beta$. You can use the display style with double dollar signs:
-
-```         
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$
-\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-$$
-
-Limitations:
-
-1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-2.  There should not be spaces after the opening `$` or before the closing `$`.
 
 ## CONCLUSION
 
