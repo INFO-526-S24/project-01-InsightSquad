@@ -10,8 +10,8 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.538">
 
-  <meta name="author" content="Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham –Insight Squad">
-  <title>Project Title - Childcare Costs, Unemployment, and Poverty Dynamics in the US</title>
+  <meta name="author" content="Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gawtham –Insight Squad">
+  <title> Childcare Cost Analysis  - Childcare Costs, Unemployment, and Poverty Dynamics in the US</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -397,7 +397,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham –Insight Squad 
+Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gawtham –Insight Squad 
 </div>
 </div>
 </div>
@@ -430,18 +430,39 @@ Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham –Insight Squad
 </ul>
 </div>
 </section>
-<section id="plots-of-question-1" class="slide level2">
-<h2>Plots of Question 1</h2>
+<section id="average-unemployment-rates-in-us" class="slide level2">
+<h2>Average unemployment Rates in US</h2>
 
 <img data-src="presentation_files/figure-revealjs/unnamed-chunk-4-1.png" width="1800" class="r-stretch"></section>
-<section id="plot-2" class="slide level2">
-<h2>Plot 2</h2>
-
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" width="1800" class="r-stretch"></section>
-<section id="plot-3" class="slide level2">
-<h2>Plot 3</h2>
-
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-6-1.png" width="1800" class="r-stretch"></section>
+<section id="unemployment-rates-by-gender" class="slide level2">
+<h2>Unemployment Rates by Gender</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>These plots show the distribution of unemployment rates by gender throughout the United States.</p></li>
+<li><p>High childcare costs can lead to increased unemployment rates</p></li>
+<li><p>It has been observed that women exhibit a higher employment rate.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" width="1800"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-2.png" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="scatter-plot" class="slide level2">
 <h2>Scatter Plot</h2>
 
@@ -449,7 +470,7 @@ Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham –Insight Squad
 <section id="correlation-map" class="slide level2">
 <h2>Correlation Map</h2>
 
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-8-1.png" width="1800" class="r-stretch"></section>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-7-1.png" width="1800" class="r-stretch"></section>
 <section id="question-2" class="slide level2">
 <h2>Question 2</h2>
 <p>Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?</p>
@@ -462,8 +483,8 @@ Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham –Insight Squad
 <li>Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.</li>
 </ul>
 </section>
-<section id="plots-of-question-2" class="slide level2">
-<h2>Plots of Question 2</h2>
+<section id="average-family-poverty-rate-at-county-level" class="slide level2">
+<h2>Average family poverty rate at county level</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Calculate average family poverty rate at state level</span></span>
 <span id="cb1-2"><a></a>average_poverty_state <span class="ot">&lt;-</span> merged_data_county <span class="sc">%&gt;%</span></span>
@@ -471,23 +492,22 @@ Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham –Insight Squad
 <span id="cb1-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_pr_f_state =</span> <span class="fu">mean</span>(avg_pr_f, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-11-1.png" width="1650" class="r-stretch"></section>
-<section id="plot-2-1" class="slide level2">
-<h2>Plot 2</h2>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-10-1.png" width="1650" class="r-stretch"></section>
+<section id="cumulative-childcare-costs-by-state" class="slide level2">
+<h2>Cumulative Childcare Costs by State</h2>
+
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-11-1.png" width="1800" class="r-stretch"></section>
+<section id="correlation-unemployment-rate-and-childcare-costs" class="slide level2">
+<h2>Correlation Unemployment Rate and Childcare Costs</h2>
 
 <img data-src="presentation_files/figure-revealjs/unnamed-chunk-12-1.png" width="1800" class="r-stretch"></section>
-<section id="plot-3-1" class="slide level2">
-<h2>Plot 3</h2>
-
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-13-1.png" width="1800" class="r-stretch"></section>
 <section id="conclusion" class="slide level2">
 <h2>CONCLUSION</h2>
 <div>
 <ul>
-<li class="fragment">Gender and Regional Unemployment Disparities: Highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.</li>
-<li class="fragment">Link Between Unemployment and Poverty: Showed a strong relationship between unemployment and poverty, stressing the need for focused support</li>
-<li class="fragment">Childcare Costs Affecting Family Poverty: Identified regions where high childcare costs contribute significantly to family poverty.</li>
-<li class="fragment">Directions for Future Research and Policies: Suggested using predictive models and expanding research to better inform policies that support families.</li>
+<li class="fragment"><p>The Gender and Regional Unemployment Disparities highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.</p></li>
+<li class="fragment"><p>Link Between Unemployment and Poverty showed a strong relationship between the rates, stressing the need for focused support.</p></li>
+<li class="fragment"><p>The Childcare Costs Affecting Family Poverty identified regions where high childcare costs contribute significantly to family poverty.</p></li>
 </ul>
 </div>
 </section>
@@ -495,21 +515,18 @@ Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham –Insight Squad
 <h2>FUTURE ENHANCEMENTS</h2>
 <div>
 <ul>
-<li class="fragment">Time Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.</li>
-<li class="fragment">Machine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.</li>
+<li class="fragment">Temporal Analysis: Incorporating a temporal analysis by examining how the relationships between unemployment rates, poverty levels, and childcare costs evolve over time can provide insights into trends and potential long-term impacts.</li>
+<li class="fragment">Interactive Data Visualization: Enhancing data visualization techniques by creating interactive dashboards which allow users to explore the data dynamically, customize views based on their interests, and gain deeper insights.</li>
 <li class="fragment">Policy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.</li>
 <li class="fragment">Additional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being.</li>
 </ul>
 </div>
 </section>
-<section id="feeling-adventurous" class="slide level2">
-<h2>Feeling adventurous?</h2>
-<ul>
-<li><p>You are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.</p></li>
-<li><p>But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.</p></li>
-</ul>
+<section id="thank-you" class="slide level2">
+<h2>Thank You</h2>
 
-<div class="quarto-auto-generated-content">
+
+<img data-src="images/Thank_img.webp" class="quarto-figure quarto-figure-center r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
