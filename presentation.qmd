@@ -221,7 +221,7 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
   geom_abline (slope=1, linetype = "dashed", color="Red") +
   scale_color_viridis() +
   labs(title = "Family Poverty vs Unemployment Rate",
-       subtitle = "Considering all the counties",
+       subtitle = "Considering all the States",
        x = 'Family Poverty(%)',
        y= 'Unemployment Rate (%)',
        color = "Density\n"
