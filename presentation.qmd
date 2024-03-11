@@ -1,7 +1,8 @@
 ---
 title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
 subtitle: "INFO 526 - Spring 2024 - Project 1"
-author: "Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham --Insight Squad"
+author: "Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan Gautham 
+                           Insight Squad"
 
 title-slide-attributes:
   data-background-image: images/bg.webp
