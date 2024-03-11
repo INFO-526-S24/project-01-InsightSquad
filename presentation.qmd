@@ -82,8 +82,6 @@ childcare_data <- child_cost
 -   The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
 :::
 
-
-
 ## QUESTION 1
 
 Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
@@ -91,12 +89,12 @@ Which locations have lower unemployment rates? Which gender experiences higher u
 ## APPROACH
 
 ::: nonincremental
-- Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.  
-- We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.  
-- Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
+-   Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.\
+-   We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.\
+-   Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
 :::
 
-## Plots of Question 1
+## Average unemployment Rates in US
 
 ```{r}
 # Calculate average unemployment
@@ -122,7 +120,7 @@ state_unemployment <- state_unemployment %>%
 
 # Plot the state-level map
 plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "states") +
-  scale_fill_continuous(name = "Avg State Unemployment",low = "#8ca977", high = "#e4a663", na.value = "#8ca977") +
+  scale_fill_continuous(name = "Avg State Unemployment",low = "lightblue", high = "navy", na.value = "#8ca977") +
   labs(title = "Average Unemployment Rate by State",
        subtitle = "Based on Data from Childcare Costs") +
   theme_minimal() +
@@ -141,7 +139,73 @@ plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "stat
 
 ```
 
-## Plot 2
+##  Unemployment Rates by Gender
+
+::: columns
+::: {.column width="50%"}
+-   These plots show the distribution of unemployment rates by gender throughout the United States.
+
+-   High childcare costs can lead to increased unemployment rates
+
+-   It has been observed that women exhibit a higher employment rate.
+:::
+
+::: {.column width="50%"}
+```{r, warning = FALSE}
+# gender specific unemployment 
+averaged_gender_unemployment <- child_cost %>%
+  group_by(county_fips_code) %>%
+  summarise(
+    avg_unr_16_m = mean(munr_16, na.rm = TRUE),  #  for Male
+    avg_unr_16_f = mean(funr_16, na.rm = TRUE)   # for Female
+  )
+# Merging 
+geo_data_gender <- counties %>%
+  select(county_fips_code, state_abbreviation) %>%
+  left_join(averaged_gender_unemployment, by = "county_fips_code") %>%
+  mutate(fips = as.character(county_fips_code))  # Prepare for usmap
+
+# state level for gender-specific rates similar to overll maps part 2
+state_unemployment_gender <- geo_data_gender %>%
+  group_by(state_abbreviation) %>%
+  summarise(
+    avg_unr_state_m = mean(avg_unr_16_m, na.rm = TRUE),  # Male
+    avg_unr_state_f = mean(avg_unr_16_f, na.rm = TRUE)   # Female
+  ) %>%
+  rename(state = state_abbreviation)  # Ensuring compatibility with usmap
+
+# plot state-level map for gender-specific unemployment rates
+plot_state_unemployment_rate <- function(data, value_col, title) {
+  plot_usmap(data = data, values = value_col, regions = "states") +
+    scale_fill_continuous(name = title, low = "lightblue", high = "navy", na.value = "lightblue") +
+    labs(title = title,
+         subtitle = "Gender-specific unemployment rates in US") +
+    theme_void() +
+    theme(legend.position = "bottom",
+          plot.title = element_text(hjust = 0.5, size = 14),
+          plot.subtitle = element_text(hjust = 0.5, size = 10),
+          legend.title = element_text(size = 10),
+          legend.text = element_text(size = 8),
+          panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "white", colour = NA),
+        plot.background = element_rect(fill = "white", colour = NA),
+        axis.ticks = element_blank(), 
+        axis.title.x = element_blank(), 
+        axis.title.y = element_blank())
+}
+
+# Plotting for male and female unemployment rates
+
+
+male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_m", "Average Male Unemployment Rate by State")
+female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")
+
+print(male_map)
+print(female_map)
+```
+:::
+:::
 
 ```{r}
 # gender specific unemployment 
@@ -169,7 +233,7 @@ state_unemployment_gender <- geo_data_gender %>%
 # plot state-level map for gender-specific unemployment rates
 plot_state_unemployment_rate <- function(data, value_col, title) {
   plot_usmap(data = data, values = value_col, regions = "states") +
-    scale_fill_continuous(name = title, low = "#8ca977", high = "#e4a663", na.value = "#8ca977") +
+    scale_fill_continuous(name = title, low = "lightblue", high = "navy", na.value = "lightblue") +
     labs(title = title,
          subtitle = "Gender-specific unemployment rates in US") +
     theme_void() +
@@ -194,14 +258,6 @@ male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_sta
 female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")
 
 print(male_map)
-```
-
-## Plot 3
-
-```{r}
-
-print(female_map)
-
 ```
 
 ## Scatter Plot
@@ -294,7 +350,6 @@ Which places have higher rates of family poverty? Is there a relationship betwee
 
 ## Plots of Question 2
 
-
 ```{r}
 # Calculate average family poverty rate at county level
 average_poverty_county <- childcare_data %>%
@@ -307,6 +362,7 @@ counties_map <- get_urbn_map("counties")
 
 merged_data_county <- left_join(counties_map, average_poverty_county, by = c("county_fips" = "county_fips_code"))
 ```
+
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 # Calculate average family poverty rate at state level
 average_poverty_state <- merged_data_county %>%
@@ -407,24 +463,21 @@ ggplot(merged_data, aes(x = mean_unemployment, y = avg_childcare_costs_state)) +
 
 ## CONCLUSION
 
-:::incremental
-- The Gender and Regional Unemployment Disparities highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.
+::: incremental
+-   The Gender and Regional Unemployment Disparities highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.
 
-- Link Between Unemployment and Poverty showed a strong relationship between the rates, stressing the need for focused support.
+-   Link Between Unemployment and Poverty showed a strong relationship between the rates, stressing the need for focused support.
 
-- The Childcare Costs Affecting Family Poverty identified regions where high childcare costs contribute significantly to family poverty.
-
-
+-   The Childcare Costs Affecting Family Poverty identified regions where high childcare costs contribute significantly to family poverty.
 :::
 
 ## FUTURE ENHANCEMENTS
 
-:::incremental
-- Time Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.
-- Machine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.
-- Policy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.
-- Additional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being.
-
+::: incremental
+-   Time Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.
+-   Machine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.
+-   Policy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.
+-   Additional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being.
 :::
 
 ## Feeling adventurous?
@@ -433,6 +486,6 @@ ggplot(merged_data, aes(x = mean_unemployment, y = avg_childcare_costs_state)) +
 
 -   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.
 
-## Thank You 
-![Image](image/Thank_img.png)
+## Thank You
 
+![Image](image/Thank_img.png)
