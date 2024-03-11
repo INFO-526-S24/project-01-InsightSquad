@@ -172,7 +172,7 @@
     "href": "presentation.html#approach-for-question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Approach for Question 2",
-    "text": "Approach for Question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs, visualized through spatial maps."
+    "text": "Approach for Question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs."
   },
   {
     "objectID": "presentation.html#average-family-poverty-rate-at-county-level",
@@ -207,6 +207,6 @@
     "href": "presentation.html#future-enhancements",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "FUTURE ENHANCEMENTS",
-    "text": "FUTURE ENHANCEMENTS\n\n\nTime Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.\nMachine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.\nPolicy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.\nAdditional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being."
+    "text": "FUTURE ENHANCEMENTS\n\n\nTemporal Analysis: Incorporating a temporal analysis by examining how the relationships between unemployment rates, poverty levels, and childcare costs evolve over time can provide insights into trends and potential long-term impacts.\nInteractive Data Visualization: Enhancing data visualization techniques by creating interactive dashboards which allow users to explore the data dynamically, customize views based on their interests, and gain deeper insights.\nPolicy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.\nAdditional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being."
   }
 ]
