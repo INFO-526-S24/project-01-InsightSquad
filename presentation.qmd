@@ -35,7 +35,8 @@ pacman::p_load(tidymodels,
                usmap,
                ggpointdensity,
                viridis,
-               ggpubr
+               ggpubr,
+               plotly
                
                )
 
@@ -295,7 +296,7 @@ Which places have higher rates of family poverty? Is there a relationship betwee
 -   Creating spatial maps to show average family poverty rates across the US.
 -   Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.
 
-## Plots of Question 2
+## Average family poverty rate at county level
 
 ```{r}
 # Calculate average family poverty rate at county level
@@ -334,7 +335,7 @@ ggplot(data = merged_data_state, aes(fill = avg_pr_f_state, color = state_name))
 
 ```
 
-## Plot 2
+## Cumulative Childcare Costs by State
 
 ```{r}
 childcare_data <- childcare_data %>%
@@ -366,7 +367,7 @@ ggplot(data = merged_data_childcare_costs_state, aes(fill = avg_childcare_costs_
 
 ```
 
-## Plot 3
+## Correlation Unemployment Rate and Childcare Costs
 
 ```{r}
 
