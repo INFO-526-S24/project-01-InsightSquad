@@ -190,6 +190,7 @@ print(female_map)
 ## Scatter Plot
 
 ```{r}
+#| label: COR
 
 CHLD <- read_csv(here('data','childcare_costs.csv'))
 conty <- read_csv(here('data','counties.csv'))
