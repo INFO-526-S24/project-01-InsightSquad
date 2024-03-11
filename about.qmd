@@ -4,16 +4,16 @@ format: html
 editor: visual
 ---
 
-This project was developed by **The Insight Squad** For [INFO 526 - Data Analysis and Visualization](https://datavizaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
+This project was developed by *The Insight Squad* For [INFO 526 - Data Analysis and Visualization](https://datavizaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
--  Shreemithra Naveen: A first-year, first-semester Master's student in Data Science.
+-   Shreemithra Naveen: 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.
 
--  Mohammad Farmani: One sentence description of Team member 2 (e.g., year, major, etc.).
+-   Mohammad Farmani: 2nd year PhD student in Hydrology and Atmospheric Sciences in University of Arizona.
 
--  Narasimha Vardhan Rachaputi: One sentence description of Team member 3 (e.g., year, major, etc.).
+-   Narasimha Vardhan Rachaputi: 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.
 
--  Devendran  : One sentence description of Team member 4 (e.g., year, major, etc.).
+-  Devendran Vemula  : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.
 
--  Amaan  : One sentence description of Team member 4 (e.g., year, major, etc.).
+-  Amaan Mulla : 1st year graduate student pursuing Human Centered Computing major, School of Information in University of Arizona.
 
--  Gowtham  : One sentence description of Team member 4 (e.g., year, major, etc.).
+-  Gowtham Gopalakrishnan  : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.

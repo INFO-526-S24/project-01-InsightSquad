@@ -1,21 +1,18 @@
 ---
 title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
-subtitle: "INFO 526 - Fall 2023 - Project 1"
-author: "Narasimha Rachaputi
-Devendran Vemula
-Mohammad Farmani
-Shreemithra
-Gowtham
-Amaan
-"
+subtitle: "INFO 526 - Spring 2024 - Project 1"
+author: "Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham --Insight Squad"
+
 title-slide-attributes:
-  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-image: images/bg.webp
   data-background-size: stretch
-  data-background-opacity: "0.7"
+  data-background-opacity: "0.5"
   data-slide-number: none
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
+    transition: slide
+    background-transition: fade
   
 editor: visual
 execute:
@@ -28,7 +25,21 @@ execute:
 
 # Load packages here
 pacman::p_load(tidymodels,
-               tidyverse)
+               tidyverse,
+               dplyr,
+               ggplot2,
+               here,
+               tidyr,
+               stats,
+               usmap,
+               ggpointdensity,
+               viridis,
+               ggpubr
+               
+               )
+
+devtools::install_github("UrbanInstitute/urbnmapr")
+library(urbnmapr)
 
 ```
 
@@ -52,126 +63,337 @@ knitr::opts_chunk$set(
 #| label: load-data
 #| include: false
 # Load data here
-data(mtcars)
-mtcars$speed <- mtcars$hp / mtcars$wt
 
-data("penguins")
+child_cost <- read.csv(here('Data','childcare_costs.csv'))
+counties <- read.csv(here('Data','counties.csv'))
+
+counties_data <- counties
+childcare_data <- child_cost
+
 ```
 
 ## INTRODUCTION
+
 ::: incremental
- -  The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.
--  Two main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.
--  The NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.
--  The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
+-   The objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.
+-   Two main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.
+-   The NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.
+-   The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
 :::
 
+
+
+## QUESTION 1
+
+Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
 
 ## APPROACH
+
 ::: nonincremental
--Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.
--We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.
--Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
-
+- Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.  
+- We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.  
+- Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
 :::
 
-## Layouts
-
-You can use plain text
-
-::: columns
-::: {.column width="40%"}
--   or bullet points[^1]
-:::
-
-::: {.column width="60%"}
-or in two columns
-:::
-:::
-
-[^1]: And add footnotes
-
--   like
-
--   this
-
-## Code
-
-```{r, echo=FALSE}
-model <- lm(mpg ~ speed, data = mtcars) 
-
-model |> tidy()
-
-model |> glance()
-
-```
-
-## Plots
+## Plots of Question 1
 
 ```{r}
-penguins |>
-  mutate(species = ifelse(species == "Adelie", "Adelie", "Other")) |>
-  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
-  geom_point()
+# Calculate average unemployment
+averaged_unemployment <- child_cost %>%
+  group_by(county_fips_code) %>%
+  summarise(mean_unr_16 = mean(unr_16, na.rm = TRUE))
+
+# Merge the unemployment data with county details to use for our geo_data(The main dataset)
+geo_data <- counties %>%
+  select(county_fips_code, state_abbreviation) %>%
+  left_join(averaged_unemployment, by = "county_fips_code")
+
+
+# Calculate the average unemployment rate at the state level for usmaps
+state_unemployment <- geo_data %>%
+  group_by(state_abbreviation) %>%
+  summarise(mean_unr_state = mean(mean_unr_16, na.rm = TRUE))
+
+# Rename 'state_abbreviation' to 'state' for compatibility with usmap
+state_unemployment <- state_unemployment %>%
+  rename(state = state_abbreviation)
+
+# Plot the state-level map
+state_map <- plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "states") +
+  scale_fill_continuous(name = "Avg Unemployment Rate", low = "green", high = "red", na.value = "grey50") +
+  labs(title = "Average Unemployment Rate by State",
+       subtitle = "Based on 'unr_16' variable from Childcare Costs Dataset") +
+  theme_minimal() +
+  theme(legend.position = "bottom",
+        plot.title = element_text(hjust = 0.5, size = 16),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+# Display the state-level map
+print(state_map)
 ```
 
-## Plot and text
+## Plot 2
+
+```{r}
+
+# gender specific unemployment 
+averaged_gender_unemployment <- child_cost %>%
+  group_by(county_fips_code) %>%
+  summarise(
+    avg_unr_16_m = mean(munr_16, na.rm = TRUE),  #  for Male
+    avg_unr_16_f = mean(funr_16, na.rm = TRUE)   # for Female
+  )
+# Merging 
+geo_data_gender <- counties %>%
+  select(county_fips_code, state_abbreviation) %>%
+  left_join(averaged_gender_unemployment, by = "county_fips_code") %>%
+  mutate(fips = as.character(county_fips_code))  # Prepare for usmap
+
+# state level for gender-specific rates similar to overll maps part 2
+state_unemployment_gender <- geo_data_gender %>%
+  group_by(state_abbreviation) %>%
+  summarise(
+    avg_unr_state_m = mean(avg_unr_16_m, na.rm = TRUE),  # Male
+    avg_unr_state_f = mean(avg_unr_16_f, na.rm = TRUE)   # Female
+  ) %>%
+  rename(state = state_abbreviation)  # Ensuring compatibility with usmap
+
+# plot state-level map for gender-specific unemployment rates
+plot_state_unemployment_rate <- function(data, value_col, title) {
+  plot_usmap(data = data, values = value_col, regions = "states") +
+    scale_fill_continuous(name = title, low = "green", high = "red", na.value = "grey50") +
+    labs(title = title,
+         subtitle = "Based on '16 data from Childcare Costs Dataset") +
+    theme_minimal() +
+    theme(legend.position = "bottom",
+          plot.title = element_text(hjust = 0.5, size = 14),
+          plot.subtitle = element_text(hjust = 0.5, size = 10),
+          legend.title = element_text(size = 10),
+          legend.text = element_text(size = 8))
+}
+
+# Plotting for male and female unemployment rates
+
+
+male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_m", "Average Male Unemployment Rate by State")
+female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")
+
+print(male_map)
+```
+
+## Plot 3
+
+```{r}
+
+print(female_map)
+
+```
+
+## Scatter Plot
+
+```{r}
+#| label: COR
+
+CHLD <- read_csv(here('data','childcare_costs.csv'))
+conty <- read_csv(here('data','counties.csv'))
+
+combine <- merge(CHLD,conty,by=c('county_fips_code'),all.x=T)
+combine <- combine|>filter(!state_name%in%c("Hawaii"))
+
+ggplot(combine,aes(x = pr_p, y = unr_16)) + 
+  geom_point() +
+  geom_pointdensity() +
+  geom_abline (slope=1, linetype = "dashed", color="Red") +
+  scale_color_viridis() +
+  labs(title = "Family Pverty vs Unemployment Rate",
+       subtitle = "Considering all the counties",
+       x = 'Family Poverty(%)',
+       y= 'Unemployment Rate (%)',
+       color = "Density\n"
+       ) +
+  stat_cor(method = "pearson", label.x = 3, label.y = 30)
+
+```
+
+## Correlation Map
+
+```{r}
+
+child_cost <- read.csv(here('Data','childcare_costs.csv'))
+counties <- read.csv(here('Data','counties.csv'))
+
+# Calculate average unemployment
+averaged_unemployment <- child_cost %>%
+  group_by(county_fips_code) %>%
+  summarise(mean_unr_16 = mean(unr_16, na.rm = TRUE))
+
+
+child_cost <- read.csv(here('Data','childcare_costs.csv'))
+counties <- read.csv(here('Data','counties.csv'))
+
+correlation_data <- combine %>%
+  group_by(county_fips_code) %>%
+  summarize(correlation = cor(pr_p, unr_16))
+
+
+
+
+geo_data <- counties %>%
+  select(county_fips_code, state_abbreviation) %>%
+  left_join(correlation_data, by = "county_fips_code")
+
+state_correlation <- geo_data %>%
+  group_by(state_abbreviation) %>%
+  summarise(mean_cor_state = mean(correlation, na.rm = TRUE))
+
+# Rename 'state_abbreviation' to 'state' for compatibility with usmap
+state_correlation <- state_correlation %>%
+  rename(state = state_abbreviation)
+
+# Plot the state-level map
+state_map <- plot_usmap(data = state_correlation, values = "mean_cor_state", regions = "states") +
+  scale_fill_continuous(name = "Correlation", low = "green", high = "red", na.value = "grey50") +
+  labs(title = "Average Correlation Rate by State",
+       subtitle = "Based on 'pr_p' and 'unr_16 variables from Childcare Costs Dataset") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        plot.title = element_text(hjust = 0.5, size = 16),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+# Display the state-level map
+print(state_map)
+
+```
+
+## Question 2
+
+Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
+
+## Approach for Question 2
+
+-   Analyzing the link between family poverty rates and childcare costs.
+-   Creating spatial maps to show average family poverty rates across the US.
+-   Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.
+
+## Plots of Question 2
 
 ::: columns
 ::: {.column width="50%"}
--   Some text
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
+# Calculate average family poverty rate at county level
+average_poverty_county <- childcare_data %>%
+  group_by(county_fips_code) %>%
+  summarise(avg_pr_f = mean(pr_f, na.rm = TRUE)) %>%
+  mutate(county_fips_code = as.character(county_fips_code))
 
--   goes here
+# Merge with US counties map
+counties_map <- get_urbn_map("counties")
+
+merged_data_county <- left_join(counties_map, average_poverty_county, by = c("county_fips" = "county_fips_code"))
+
+# Calculate average family poverty rate at state level
+average_poverty_state <- merged_data_county %>%
+  group_by(state_name) %>%
+  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))
+```
 :::
 
 ::: {.column width="50%"}
 ```{r, warning=FALSE, fig.width=5.5}
-penguins |>
-  ggplot(aes(x = bill_length_mm, y = species, color = species)) +
-  geom_boxplot(linewidth = 0.75,
-               outlier.size = 2.5) +
-  theme_minimal(base_size = 15) +
-  theme(legend.key.size = unit(0.8, "cm"))
+
+states_map <- get_urbn_map("states", sf = TRUE)
+merged_data_state <- left_join(states_map, average_poverty_state, by = c("state_name" = "state_name"))
+
+ggplot(data = merged_data_state, aes(fill = avg_pr_f_state, color = state_name)) +
+  geom_sf(size = 0.2) +
+  geom_sf_text(aes(label = state_name), size = 3, check_overlap = TRUE) +  # Use geom_sf_text for spatial data
+  scale_fill_viridis_c() +
+  labs(title = "Average Family Poverty Rate by County", subtitle = "Differentiated by State") +
+  theme_minimal()+
+  theme(axis.text = element_blank(), axis.title = element_blank()) +
+  guides(color = FALSE)  
+
 ```
 :::
 :::
 
-# A new section...
-
-## Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+## Plot 2
 
 ```{r}
-penguins |> 
-  head() |>
-  kableExtra::kable() |>
-  kableExtra::kable_styling()
+childcare_data <- childcare_data %>%
+  mutate(cumulative_childcare_costs = mc_infant + mc_toddler + mc_preschool + mfcc_infant + mfcc_toddler + mfcc_preschool)
+
+merged_childcare_data <- left_join(childcare_data, counties_data, by = "county_fips_code")
+
+
+# Calculate average cumulative childcare costs at the state level
+average_childcare_costs_state <- merged_childcare_data %>%
+  group_by(state_name) %>%
+  summarise(avg_childcare_costs_state = mean(cumulative_childcare_costs, na.rm = TRUE)) 
+
+# Get US states map
+states_map <- get_urbn_map("states", sf = TRUE)
+
+# Merge data for visualization
+merged_data_childcare_costs_state <- left_join(states_map, average_childcare_costs_state, by = c("state_name" = "state_name"))
+
+
+ggplot(data = merged_data_childcare_costs_state, aes(fill = avg_childcare_costs_state, color = state_name)) +
+  geom_sf(size = 0.2) +
+  geom_sf_text(aes(label = state_name), color="white", size = 3, check_overlap = TRUE)+
+  scale_fill_viridis_c() +
+  labs(title = "Average Cumulative Childcare Costs by State", subtitle = "Differentiated by State") +
+  theme_minimal() +
+  theme(axis.text = element_blank(), axis.title = element_blank()) +
+  guides(color = FALSE)  
+
 ```
 
-## Images
+## Plot 3
 
-![Image credit: Danielle Navarro, Percolate.](images/watercolour_sys02_img34_teacup-ocean.png){fig-align="center" width="500"}
+```{r}
 
-## Math Expressions {.smaller}
+# 3rd graph
 
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. \$\\alpha+\\beta\$ renders $\alpha + \beta$. You can use the display style with double dollar signs:
+correlation_data <- merge(average_poverty_state, average_childcare_costs_state, by = "state_name")
 
-```         
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+states_map <- get_urbn_map("states", sf = TRUE)
+
+# Merged data
+merged_data_correlation <- left_join(states_map, correlation_data, by = c("state_name" = "state_name"))
+
+ggplot(data = merged_data_correlation, aes(fill = avg_pr_f_state, color = avg_childcare_costs_state)) +
+  geom_sf(size = 0.2) +
+  geom_sf_text(aes(label = state_name), color="white", size = 3, check_overlap = TRUE)+
+  scale_fill_viridis_c() +
+  labs(title = "Correlation between Family Poverty Rate\nand Childcare Costs by State") +
+  theme_minimal()
+
 ```
 
-$$
-\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-$$
+## CONCLUSION
 
-Limitations:
+:::incremental
+- Gender and Regional Unemployment Disparities: Highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.
+- Link Between Unemployment and Poverty: Showed a strong relationship between unemployment and poverty, stressing the need for focused support
+- Childcare Costs Affecting Family Poverty: Identified regions where high childcare costs contribute significantly to family poverty.
+- Directions for Future Research and Policies: Suggested using predictive models and expanding research to better inform policies that support families.
 
-1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+:::
 
-2.  There should not be spaces after the opening `$` or before the closing `$`.
+## FUTURE ENHANCEMENTS
 
-# Wrap up
+:::incremental
+- Time Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.
+- Machine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.
+- Policy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.
+- Additional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being.
+
+:::
 
 ## Feeling adventurous?
 
