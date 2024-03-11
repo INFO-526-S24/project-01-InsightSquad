@@ -91,11 +91,11 @@
     "text": "INTRODUCTION\n\n\nThe objective of this project is to investigate the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States.\nTwo main datasets are utilized: the National Database of Childcare Prices (NDCP) and a comprehensive -Counties Dataset.\nThe NDCP dataset spans from 2008 to 2018, providing childcare price data categorized by provider type, age of children, and county characteristics.\nThe Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups."
   },
   {
-    "objectID": "presentation.html#questions-proposed",
-    "href": "presentation.html#questions-proposed",
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "QUESTIONS PROPOSED",
-    "text": "QUESTIONS PROPOSED\n\n\nWhich locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?\nWhich places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?"
+    "section": "QUESTION 1",
+    "text": "QUESTION 1\nWhich locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?"
   },
   {
     "objectID": "presentation.html#approach",
@@ -103,69 +103,6 @@
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "APPROACH",
     "text": "APPROACH\n\n-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders. -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level. -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty."
-  },
-  {
-    "objectID": "presentation.html#layouts",
-    "href": "presentation.html#layouts",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
-  },
-  {
-    "objectID": "presentation.html#code",
-    "href": "presentation.html#code",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Code",
-    "text": "Code"
-  },
-  {
-    "objectID": "presentation.html#plots",
-    "href": "presentation.html#plots",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plots",
-    "text": "Plots"
-  },
-  {
-    "objectID": "presentation.html#plot-and-text",
-    "href": "presentation.html#plot-and-text",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
-  },
-  {
-    "objectID": "presentation.html#tables",
-    "href": "presentation.html#tables",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Tables",
-    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
-  },
-  {
-    "objectID": "presentation.html#images",
-    "href": "presentation.html#images",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
-  },
-  {
-    "objectID": "presentation.html#math-expressions",
-    "href": "presentation.html#math-expressions",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Math Expressions",
-    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#feeling-adventurous",
-    "href": "presentation.html#feeling-adventurous",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
-  },
-  {
-    "objectID": "presentation.html#question-1",
-    "href": "presentation.html#question-1",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "QUESTION 1",
-    "text": "QUESTION 1\nWhich locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?"
   },
   {
     "objectID": "presentation.html#plots-of-question-1",
@@ -222,5 +159,19 @@
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plot 3",
     "text": "Plot 3"
+  },
+  {
+    "objectID": "presentation.html#math-expressions",
+    "href": "presentation.html#math-expressions",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Math Expressions",
+    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
+  },
+  {
+    "objectID": "presentation.html#feeling-adventurous",
+    "href": "presentation.html#feeling-adventurous",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "Feeling adventurous?",
+    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   }
 ]

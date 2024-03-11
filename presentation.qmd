@@ -284,6 +284,7 @@ ggplot(data = merged_data_correlation, aes(fill = avg_pr_f_state, color = avg_ch
   scale_fill_viridis_c() +
   labs(title = "Correlation between Family Poverty Rate\nand Childcare Costs by State") +
   theme_minimal()
+
 ```
 
 ## Math Expressions {.smaller}
