@@ -60,7 +60,7 @@ childcare_data <- child_cost
 
 ## Abstract
 
-This data visualization project centers on unraveling patterns in tornado occurrences and their impacts across the United States. Tornadoes are violent, rotating columns of air that form severe thunderstorms capable of producing destructive winds. In this project we delve into two critical aspects: tornado magnitude patterns and the tornado related fatalities in each state . Through innovative visualizations like alley maps and horizontal bar plot, we seek to provide a clearer understanding of tornado phenomena, enabling informed decision-making and proactive disaster management.
+This data visualization project  study into the interplay of childcare costs, unemployment rates, and poverty levels across diverse locales within the United States. Central to this exploration are two pivotal datasets: the National Database of Childcare Prices (NDCP) spanning a decade (2008-2018) and a robust Counties Dataset, which together encapsulate the multifaceted economic landscape on a granular level. The NDCP provides detailed childcare pricing information, differentiated by service provider and age group, while the Counties Dataset enriches this with vital geographic and demographic context. Through rigorous data analysis, the proposed study aims to unearth patterns and establish correlations, shedding light on potential covert connections between these critical socioeconomic factors. This exploration is poised to yield nuanced insights into the socioeconomic fabric that shapes community welfare, potentially guiding policy development and interventions designed to bolster economic resilience and family support structures across the nation.
 
 ## Introduction
 

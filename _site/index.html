@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.537">
+<meta name="generator" content="quarto-1.4.538">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -133,8 +167,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
   <ul class="collapse">
   <li><a href="#question-1-which-locations-have-lower-unemployment-rates-which-gender-experiences-higher-unemployment-rates-in-the-us-is-there-a-relationship-between-the-unemployment-rate-and-poverty" id="toc-question-1-which-locations-have-lower-unemployment-rates-which-gender-experiences-higher-unemployment-rates-in-the-us-is-there-a-relationship-between-the-unemployment-rate-and-poverty" class="nav-link" data-scroll-target="#question-1-which-locations-have-lower-unemployment-rates-which-gender-experiences-higher-unemployment-rates-in-the-us-is-there-a-relationship-between-the-unemployment-rate-and-poverty">Question 1: Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a>
+  <ul class="collapse">
   <li><a href="#question-2-which-places-have-higher-rates-of-family-poverty-is-there-a-relationship-between-poverty-and-the-cost-of-raising-children" id="toc-question-2-which-places-have-higher-rates-of-family-poverty-is-there-a-relationship-between-poverty-and-the-cost-of-raising-children" class="nav-link" data-scroll-target="#question-2-which-places-have-higher-rates-of-family-poverty-is-there-a-relationship-between-poverty-and-the-cost-of-raising-children">Question 2: Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?</a></li>
   </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a></li>
   </ul>
 </nav>
     </div>
@@ -195,10 +235,83 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="analysis" class="level4">
 <h4 class="anchored" data-anchor-id="analysis">Analysis</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section"></h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 34567 Columns: 61
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (61): county_fips_code, study_year, unr_16, funr_16, munr_16, unr_20to64...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Rows: 3144 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): county_name, state_name, state_abbreviation
+dbl (1): county_fips_code
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/COR-1.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
 <section id="discussion" class="level4">
 <h4 class="anchored" data-anchor-id="discussion">Discussion</h4>
-</section>
 </section>
 <section id="question-2-which-places-have-higher-rates-of-family-poverty-is-there-a-relationship-between-poverty-and-the-cost-of-raising-children" class="level3">
 <h3 class="anchored" data-anchor-id="question-2-which-places-have-higher-rates-of-family-poverty-is-there-a-relationship-between-poverty-and-the-cost-of-raising-children">Question 2: Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?</h3>
@@ -215,13 +328,80 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="analysis-1" class="level4">
 <h4 class="anchored" data-anchor-id="analysis-1">Analysis</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average family poverty rate at county level</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>average_poverty_county <span class="ot">&lt;-</span> childcare_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(county_fips_code) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_pr_f =</span> <span class="fu">mean</span>(pr_f, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county_fips_code =</span> <span class="fu">as.character</span>(county_fips_code))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge with US counties map</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>counties_map <span class="ot">&lt;-</span> <span class="fu">get_urbn_map</span>(<span class="st">"counties"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>merged_data_county <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties_map, average_poverty_county, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"county_fips"</span> <span class="ot">=</span> <span class="st">"county_fips_code"</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average family poverty rate at state level</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>average_poverty_state <span class="ot">&lt;-</span> merged_data_county <span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(state_name) <span class="sc">%&gt;%</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_pr_f_state =</span> <span class="fu">mean</span>(avg_pr_f, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>old-style crs object detected; please recreate object with a recent sf::st_crs()</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="1650"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
+</section>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"></h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>old-style crs object detected; please recreate object with a recent sf::st_crs()</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3"></h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>old-style crs object detected; please recreate object with a recent sf::st_crs()</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-4" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="section-4"></h2>
 <section id="discussion-1" class="level4">
 <h4 class="anchored" data-anchor-id="discussion-1">Discussion</h4>
 <p>The proposed analysis plan is designed to dissect the intricate web of economic factors influencing family well-being and child-rearing costs. By delving into the spatial and statistical relationships between unemployment, poverty, and childcare expenses, we anticipate uncovering regional disparities and potential areas for policy intervention. The findings from this analysis could provide a robust evidence base for developing targeted strategies to alleviate the economic pressures on families, particularly in regions where the burden of childcare costs significantly intersects with high unemployment and poverty rates. Through this investigation, we aim to contribute to the broader dialogue on enhancing economic security and access to quality childcare, thereby supporting the well-being of families across the United States.</p>
 
 
-</section>
 </section>
 </section>
 
