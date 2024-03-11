@@ -214,9 +214,13 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
        ) +
   stat_cor(method = "pearson", label.x = 3, label.y = 30)
 
+
 ```
 
+The plot suggests a positive correlation, indicated by the correlation coefficient R of 0.6 and a highly significant p-value (\<2.2×10−16), meaning there's a statistically significant relationship between higher levels of poverty and higher unemployment rates. The density of the points is visualized by color intensity, with the most densely populated area being where family poverty and unemployment rates are relatively low.
+
 ```{r}
+#| label: Corelation_spatial
 child_cost <- read.csv(here('Data','childcare_costs.csv'))
 counties <- read.csv(here('Data','counties.csv'))
 
@@ -263,6 +267,8 @@ state_map <- plot_usmap(data = state_correlation, values = "mean_cor_state", reg
 # Display the state-level map
 print(state_map)
 ```
+
+The spatial map highlights a distinct geographical pattern where the western, southwestern, and southeastern regions of the United States exhibit higher correlation rates between the 'pr_p' and 'unr_16' variables from a Childcare Costs Dataset. This elevated correlation suggests a more robust relationship between these variables in those particular regions. Essentially, the map could be interpreted to suggest that in areas where unemployment is more prevalent, the associated costs of childcare (if 'pr_p' and 'unr_16' are indeed related to such costs) might be more closely linked to economic hardship, thus leading to an increase in family poverty levels. The underlying social and economic dynamics could be complex, with unemployment affecting a family's income and subsequently their ability to afford essential services like childcare, which then contributes to a cycle of poverty.
 
 #### Discussion
 

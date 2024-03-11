@@ -12,8 +12,8 @@ This project was developed by *The Insight Squad* For [INFO 526 - Data Analysis 
 
 -   Narasimha Vardhan Rachaputi: 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.
 
--  Devendran Vemula  : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.
+-   Devendran Vemula : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.
 
--  Amaan Mulla : 1st year graduate student pursuing Human Centered Computing major, School of Information in University of Arizona.
+-   Amaan Mulla : 1st year graduate student pursuing Human Centered Computing major, School of Information in University of Arizona.
 
--  Gowtham Gopalakrishnan  : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.
+-   Gowtham Gopalakrishnan : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.

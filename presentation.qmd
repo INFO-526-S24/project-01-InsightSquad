@@ -140,7 +140,7 @@ plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "stat
 
 ```
 
-##  Unemployment Rates by Gender
+## Unemployment Rates by Gender
 
 ::: columns
 ::: {.column width="50%"}
@@ -237,7 +237,7 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
 ## Correlation Map
 
 ```{r}
-
+#| label: COR_SOATIAL
 child_cost <- read.csv(here('Data','childcare_costs.csv'))
 counties <- read.csv(here('Data','counties.csv'))
 
@@ -422,10 +422,10 @@ ggplot(merged_data, aes(x = mean_unemployment, y = avg_childcare_costs_state)) +
 ## FUTURE ENHANCEMENTS
 
 ::: incremental
-- Temporal Analysis: Incorporating a temporal analysis by examining how the relationships between unemployment rates, poverty levels, and childcare costs evolve over time can provide insights into trends and potential long-term impacts.
-- Interactive Data Visualization: Enhancing data visualization techniques by creating interactive dashboards which allow users to explore the data dynamically, customize views based on their interests, and gain deeper insights.
-- Policy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.
-- Additional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being.
+-   Temporal Analysis: Incorporating a temporal analysis by examining how the relationships between unemployment rates, poverty levels, and childcare costs evolve over time can provide insights into trends and potential long-term impacts.
+-   Interactive Data Visualization: Enhancing data visualization techniques by creating interactive dashboards which allow users to explore the data dynamically, customize views based on their interests, and gain deeper insights.
+-   Policy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.
+-   Additional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being.
 :::
 
 ## Thank You
