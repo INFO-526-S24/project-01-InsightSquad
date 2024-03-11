@@ -6,7 +6,8 @@ author:
   - name: "Devendran, Shreemithra, Gowtham"
 format: html
 editor: visual
-echo: false
+execute:
+  echo: false
 ---
 
 ```{r}
