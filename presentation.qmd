@@ -393,7 +393,25 @@ Limitations:
 
 2.  There should not be spaces after the opening `$` or before the closing `$`.
 
-# Wrap up
+## CONCLUSION
+
+:::incremental
+- Gender and Regional Unemployment Disparities: Highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.
+- Link Between Unemployment and Poverty: Showed a strong relationship between unemployment and poverty, stressing the need for focused support
+- Childcare Costs Affecting Family Poverty: Identified regions where high childcare costs contribute significantly to family poverty.
+- Directions for Future Research and Policies: Suggested using predictive models and expanding research to better inform policies that support families.
+
+:::
+
+## FUTURE ENHANCEMENTS
+
+:::incremental
+- Time Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.
+- Machine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.
+- Policy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.
+- Additional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being.
+
+:::
 
 ## Feeling adventurous?
 
