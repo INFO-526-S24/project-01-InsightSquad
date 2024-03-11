@@ -28,7 +28,7 @@ pacman::p_load(tidymodels,
                usmap,
                ggpointdensity,
                viridis,
-               ggpubr
+               ggpubr,
                
                )
 
@@ -162,15 +162,30 @@ plot_state_unemployment_rate <- function(data, value_col, title) {
 # Plotting for male and female unemployment rates
 
 
-male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_m", "Average Male Unemployment Rate by State")
-female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")
-
-print(male_map)
 ```
 
 ```{r}
+
+```
+
+#### 
+
+::: columns
+::: {.column width="50%"}
+```{r, message=FALSE, warning=FALSE, echo=false}
+male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_m", "Average Male Unemployment Rate by State")
+print(male_map)
+```
+:::
+
+::: {.column width="50%"}
+```{female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")}
 print(female_map)
 ```
+:::
+:::
+
+## 
 
 ```{r}
 #| label: COR
