@@ -1,7 +1,7 @@
 ---
 title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
 subtitle: "INFO 526 - Spring 2024 - Project 1"
-author: "--Insight Squad"
+author: "Narasimha Rachaputi,Devendran Vemula,Mohammad Farmani,Shreemithra Naveen, Amaan Mulla,Gautham --Insight Squad"
 
 title-slide-attributes:
   data-background-image: images/bg.webp
@@ -81,6 +81,8 @@ childcare_data <- child_cost
 -   The Counties Dataset offers geographical and demographic insights, including unemployment rates, poverty rates, and median childcare costs for different age groups.
 :::
 
+
+
 ## QUESTION 1
 
 Which locations have lower unemployment rates? Which gender experiences higher unemployment rates in the US? Is there a relationship between the unemployment rate and poverty?
@@ -88,10 +90,12 @@ Which locations have lower unemployment rates? Which gender experiences higher u
 ## APPROACH
 
 ::: nonincremental
--Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.  -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.  -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
+-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.  
+-We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.  
+-Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
 :::
 
-## Plots of question 1
+## Plots of Question 1
 
 ```{r}
 # Calculate average unemployment
@@ -271,13 +275,13 @@ print(state_map)
 
 Which places have higher rates of family poverty? Is there a relationship between poverty and the cost of raising children?
 
-## Approach for question 2
+## Approach for Question 2
 
 -   Analyzing the link between family poverty rates and childcare costs.
 -   Creating spatial maps to show average family poverty rates across the US.
 -   Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.
 
-## Plots of question 2
+## Plots of Question 2
 
 ::: columns
 ::: {.column width="50%"}
