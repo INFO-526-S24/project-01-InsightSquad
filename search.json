@@ -105,6 +105,13 @@
     "text": "Discussion\nThe proposed analysis plan is designed to dissect the intricate web of economic factors influencing family well-being and child-rearing costs. By delving into the spatial and statistical relationships between unemployment, poverty, and childcare expenses, we anticipate uncovering regional disparities and potential areas for policy intervention. The findings from this analysis could provide a robust evidence base for developing targeted strategies to alleviate the economic pressures on families, particularly in regions where the burden of childcare costs significantly intersects with high unemployment and poverty rates. Through this investigation, we aim to contribute to the broader dialogue on enhancing economic security and access to quality childcare, thereby supporting the well-being of families across the United States."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by The Insight Squad For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nShreemithra Naveen: 1st year graduate student pursuing Data Science major,School of Information in University of Arizona.\nMohammad Farmani: 2nd year PhD student in Hydrology and Atmospheric Sciences in University of Arizona.\nNarasimha Vardhan Rachaputi: 1st year graduate student pursuing Data Science major,School of Information in University of Arizona.\nDevendran : One sentence description of Team member 4 (e.g., year, major, etc.).\nAmaan : One sentence description of Team member 4 (e.g., year, major, etc.).\nGowtham : One sentence description of Team member 4 (e.g., year, major, etc.)."
+  },
+  {
     "objectID": "presentation.html#introduction",
     "href": "presentation.html#introduction",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
@@ -123,14 +130,14 @@
     "href": "presentation.html#approach",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "APPROACH",
-    "text": "APPROACH\n\n-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders. -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level. -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty."
+    "text": "APPROACH\n\n\nOur analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.\n\nWe also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.\n\nSpatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty."
   },
   {
     "objectID": "presentation.html#plots-of-question-1",
     "href": "presentation.html#plots-of-question-1",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plots of question 1",
-    "text": "Plots of question 1"
+    "section": "Plots of Question 1",
+    "text": "Plots of Question 1"
   },
   {
     "objectID": "presentation.html#plot-2",
@@ -171,15 +178,15 @@
     "objectID": "presentation.html#approach-for-question-2",
     "href": "presentation.html#approach-for-question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Approach for question 2",
-    "text": "Approach for question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs, visualized through spatial maps."
+    "section": "Approach for Question 2",
+    "text": "Approach for Question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs, visualized through spatial maps."
   },
   {
     "objectID": "presentation.html#plots-of-question-2",
     "href": "presentation.html#plots-of-question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plots of question 2",
-    "text": "Plots of question 2\n\n\n\n# Calculate average family poverty rate at county level\naverage_poverty_county &lt;- childcare_data %&gt;%\n  group_by(county_fips_code) %&gt;%\n  summarise(avg_pr_f = mean(pr_f, na.rm = TRUE)) %&gt;%\n  mutate(county_fips_code = as.character(county_fips_code))\n\n# Merge with US counties map\ncounties_map &lt;- get_urbn_map(\"counties\")\n\nmerged_data_county &lt;- left_join(counties_map, average_poverty_county, by = c(\"county_fips\" = \"county_fips_code\"))\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
+    "section": "Plots of Question 2",
+    "text": "Plots of Question 2\n\n\n\n# Calculate average family poverty rate at county level\naverage_poverty_county &lt;- childcare_data %&gt;%\n  group_by(county_fips_code) %&gt;%\n  summarise(avg_pr_f = mean(pr_f, na.rm = TRUE)) %&gt;%\n  mutate(county_fips_code = as.character(county_fips_code))\n\n# Merge with US counties map\ncounties_map &lt;- get_urbn_map(\"counties\")\n\nmerged_data_county &lt;- left_join(counties_map, average_poverty_county, by = c(\"county_fips\" = \"county_fips_code\"))\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
   },
   {
     "objectID": "presentation.html#plot-2-1",
@@ -196,11 +203,18 @@
     "text": "Plot 3"
   },
   {
-    "objectID": "presentation.html#math-expressions",
-    "href": "presentation.html#math-expressions",
+    "objectID": "presentation.html#conclusion",
+    "href": "presentation.html#conclusion",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Math Expressions",
-    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
+    "section": "CONCLUSION",
+    "text": "CONCLUSION\n\n\nGender and Regional Unemployment Disparities: Highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.\nLink Between Unemployment and Poverty: Showed a strong relationship between unemployment and poverty, stressing the need for focused support\nChildcare Costs Affecting Family Poverty: Identified regions where high childcare costs contribute significantly to family poverty.\nDirections for Future Research and Policies: Suggested using predictive models and expanding research to better inform policies that support families."
+  },
+  {
+    "objectID": "presentation.html#future-enhancements",
+    "href": "presentation.html#future-enhancements",
+    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
+    "section": "FUTURE ENHANCEMENTS",
+    "text": "FUTURE ENHANCEMENTS\n\n\nTime Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.\nMachine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.\nPolicy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.\nAdditional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being."
   },
   {
     "objectID": "presentation.html#feeling-adventurous",
@@ -208,12 +222,5 @@
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Feeling adventurous?",
     "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by The Insight Squad For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nShreemithra Naveen: A first-year, first-semester Master’s student in Data Science.\nMohammad Farmani: One sentence description of Team member 2 (e.g., year, major, etc.).\nNarasimha Vardhan Rachaputi: One sentence description of Team member 3 (e.g., year, major, etc.).\nDevendran : One sentence description of Team member 4 (e.g., year, major, etc.).\nAmaan : One sentence description of Team member 4 (e.g., year, major, etc.).\nGowtham : One sentence description of Team member 4 (e.g., year, major, etc.)."
   }
 ]
