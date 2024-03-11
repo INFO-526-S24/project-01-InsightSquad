@@ -120,7 +120,7 @@ state_unemployment <- state_unemployment %>%
 
 # Plot the state-level map
 plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "states") +
-  scale_fill_continuous(name = "Avg State Unemployment",low = "lightblue", high = "navy", na.value = "#8ca977") +
+  scale_fill_continuous(name = "Avg State Unemployment",low = "lightblue", high = "navy", na.value = "lightblue") +
   labs(title = "Average Unemployment Rate by State",
        subtitle = "Based on Data from Childcare Costs") +
   theme_minimal() +
@@ -206,59 +206,6 @@ print(female_map)
 ```
 :::
 :::
-
-```{r}
-# gender specific unemployment 
-averaged_gender_unemployment <- child_cost %>%
-  group_by(county_fips_code) %>%
-  summarise(
-    avg_unr_16_m = mean(munr_16, na.rm = TRUE),  #  for Male
-    avg_unr_16_f = mean(funr_16, na.rm = TRUE)   # for Female
-  )
-# Merging 
-geo_data_gender <- counties %>%
-  select(county_fips_code, state_abbreviation) %>%
-  left_join(averaged_gender_unemployment, by = "county_fips_code") %>%
-  mutate(fips = as.character(county_fips_code))  # Prepare for usmap
-
-# state level for gender-specific rates similar to overll maps part 2
-state_unemployment_gender <- geo_data_gender %>%
-  group_by(state_abbreviation) %>%
-  summarise(
-    avg_unr_state_m = mean(avg_unr_16_m, na.rm = TRUE),  # Male
-    avg_unr_state_f = mean(avg_unr_16_f, na.rm = TRUE)   # Female
-  ) %>%
-  rename(state = state_abbreviation)  # Ensuring compatibility with usmap
-
-# plot state-level map for gender-specific unemployment rates
-plot_state_unemployment_rate <- function(data, value_col, title) {
-  plot_usmap(data = data, values = value_col, regions = "states") +
-    scale_fill_continuous(name = title, low = "lightblue", high = "navy", na.value = "lightblue") +
-    labs(title = title,
-         subtitle = "Gender-specific unemployment rates in US") +
-    theme_void() +
-    theme(legend.position = "bottom",
-          plot.title = element_text(hjust = 0.5, size = 14),
-          plot.subtitle = element_text(hjust = 0.5, size = 10),
-          legend.title = element_text(size = 10),
-          legend.text = element_text(size = 8),
-          panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(), 
-        panel.background = element_rect(fill = "white", colour = NA),
-        plot.background = element_rect(fill = "white", colour = NA),
-        axis.ticks = element_blank(), 
-        axis.title.x = element_blank(), 
-        axis.title.y = element_blank())
-}
-
-# Plotting for male and female unemployment rates
-
-
-male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_m", "Average Male Unemployment Rate by State")
-female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")
-
-print(male_map)
-```
 
 ## Scatter Plot
 
@@ -488,4 +435,4 @@ ggplot(merged_data, aes(x = mean_unemployment, y = avg_childcare_costs_state)) +
 
 ## Thank You
 
-![Image](image/Thank_img.png)
+![](image/Thank_img.png)
