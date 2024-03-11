@@ -430,4 +430,4 @@ ggplot(merged_data, aes(x = mean_unemployment, y = avg_childcare_costs_state)) +
 
 ## Thank You
 
-\![Image](images/Thank_img.webp)
+\![ ](images/Thank_img.webp)
