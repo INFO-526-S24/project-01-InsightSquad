@@ -88,7 +88,7 @@ Which locations have lower unemployment rates? Which gender experiences higher u
 ## APPROACH
 
 ::: nonincremental
--Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders. -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level. -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
+-Our analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.  -We also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.  -Spatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty.
 :::
 
 ## Plots of question 1
