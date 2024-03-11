@@ -8,6 +8,8 @@ format: html
 editor: visual
 execute:
   echo: false
+  message: false
+  error: false
 ---
 
 ```{r}
