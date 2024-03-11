@@ -200,7 +200,7 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
   geom_pointdensity() +
   geom_abline (slope=1, linetype = "dashed", color="Red") +
   scale_color_viridis() +
-  labs(title = "Family Pverty vs Unemployment Rate",
+  labs(title = "Family Poverty vs Unemployment Rate",
        subtitle = "Considering all the counties",
        x = 'Family Poverty(%)',
        y= 'Unemployment Rate (%)',

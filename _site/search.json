@@ -186,7 +186,7 @@
     "href": "presentation.html#plots-of-question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Plots of Question 2",
-    "text": "Plots of Question 2\n\n\n\n# Calculate average family poverty rate at county level\naverage_poverty_county &lt;- childcare_data %&gt;%\n  group_by(county_fips_code) %&gt;%\n  summarise(avg_pr_f = mean(pr_f, na.rm = TRUE)) %&gt;%\n  mutate(county_fips_code = as.character(county_fips_code))\n\n# Merge with US counties map\ncounties_map &lt;- get_urbn_map(\"counties\")\n\nmerged_data_county &lt;- left_join(counties_map, average_poverty_county, by = c(\"county_fips\" = \"county_fips_code\"))\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
+    "text": "Plots of Question 2\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
   },
   {
     "objectID": "presentation.html#plot-2-1",

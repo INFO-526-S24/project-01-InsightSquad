@@ -1,7 +1,7 @@
 ---
 title: "Childcare Costs, Unemployment, and Poverty Dynamics in the US"
 subtitle: "INFO 526 - Spring 2024 - Project 1"
-author: "Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gautham --Insight Squad"
+author: "Narasimha ,Devendran ,Mohammad ,Shreemithra , Amaan ,Gawtham --Insight Squad"
 
 title-slide-attributes:
   data-background-image: images/bg.webp
@@ -114,30 +114,35 @@ state_unemployment <- geo_data %>%
   group_by(state_abbreviation) %>%
   summarise(mean_unr_state = mean(mean_unr_16, na.rm = TRUE))
 
+
 # Rename 'state_abbreviation' to 'state' for compatibility with usmap
 state_unemployment <- state_unemployment %>%
   rename(state = state_abbreviation)
 
 # Plot the state-level map
-state_map <- plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "states") +
-  scale_fill_continuous(name = "Avg Unemployment Rate", low = "green", high = "red", na.value = "grey50") +
+plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "states") +
+  scale_fill_continuous(name = "Avg State Unemployment",low = "#8ca977", high = "#e4a663", na.value = "#8ca977") +
   labs(title = "Average Unemployment Rate by State",
-       subtitle = "Based on 'unr_16' variable from Childcare Costs Dataset") +
+       subtitle = "Based on Data from Childcare Costs") +
   theme_minimal() +
   theme(legend.position = "bottom",
         plot.title = element_text(hjust = 0.5, size = 16),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         legend.title = element_text(size = 12),
-        legend.text = element_text(size = 10))
+        legend.text = element_text(size = 10),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "white", colour = NA),
+        plot.background = element_rect(fill = "white", colour = NA),
+        axis.ticks = element_blank(), 
+        axis.title.x = element_blank(), 
+        axis.title.y = element_blank())
 
-# Display the state-level map
-print(state_map)
 ```
 
 ## Plot 2
 
 ```{r}
-
 # gender specific unemployment 
 averaged_gender_unemployment <- child_cost %>%
   group_by(county_fips_code) %>%
@@ -163,15 +168,22 @@ state_unemployment_gender <- geo_data_gender %>%
 # plot state-level map for gender-specific unemployment rates
 plot_state_unemployment_rate <- function(data, value_col, title) {
   plot_usmap(data = data, values = value_col, regions = "states") +
-    scale_fill_continuous(name = title, low = "green", high = "red", na.value = "grey50") +
+    scale_fill_continuous(name = title, low = "#8ca977", high = "#e4a663", na.value = "#8ca977") +
     labs(title = title,
-         subtitle = "Based on '16 data from Childcare Costs Dataset") +
-    theme_minimal() +
+         subtitle = "Gender-specific unemployment rates in US") +
+    theme_void() +
     theme(legend.position = "bottom",
           plot.title = element_text(hjust = 0.5, size = 14),
           plot.subtitle = element_text(hjust = 0.5, size = 10),
           legend.title = element_text(size = 10),
-          legend.text = element_text(size = 8))
+          legend.text = element_text(size = 8),
+          panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "white", colour = NA),
+        plot.background = element_rect(fill = "white", colour = NA),
+        axis.ticks = element_blank(), 
+        axis.title.x = element_blank(), 
+        axis.title.y = element_blank())
 }
 
 # Plotting for male and female unemployment rates
@@ -207,7 +219,7 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
   geom_pointdensity() +
   geom_abline (slope=1, linetype = "dashed", color="Red") +
   scale_color_viridis() +
-  labs(title = "Family Pverty vs Unemployment Rate",
+  labs(title = "Family Poverty vs Unemployment Rate",
        subtitle = "Considering all the counties",
        x = 'Family Poverty(%)',
        y= 'Unemployment Rate (%)',
@@ -281,9 +293,8 @@ Which places have higher rates of family poverty? Is there a relationship betwee
 
 ## Plots of Question 2
 
-::: columns
-::: {.column width="50%"}
-```{r, message=FALSE, warning=FALSE, echo=TRUE}
+
+```{r}
 # Calculate average family poverty rate at county level
 average_poverty_county <- childcare_data %>%
   group_by(county_fips_code) %>%
@@ -294,15 +305,14 @@ average_poverty_county <- childcare_data %>%
 counties_map <- get_urbn_map("counties")
 
 merged_data_county <- left_join(counties_map, average_poverty_county, by = c("county_fips" = "county_fips_code"))
-
+```
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
 # Calculate average family poverty rate at state level
 average_poverty_state <- merged_data_county %>%
   group_by(state_name) %>%
   summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))
 ```
-:::
 
-::: {.column width="50%"}
 ```{r, warning=FALSE, fig.width=5.5}
 
 states_map <- get_urbn_map("states", sf = TRUE)
@@ -310,16 +320,15 @@ merged_data_state <- left_join(states_map, average_poverty_state, by = c("state_
 
 ggplot(data = merged_data_state, aes(fill = avg_pr_f_state, color = state_name)) +
   geom_sf(size = 0.2) +
-  geom_sf_text(aes(label = state_name), size = 3, check_overlap = TRUE) +  # Use geom_sf_text for spatial data
-  scale_fill_viridis_c() +
-  labs(title = "Average Family Poverty Rate by County", subtitle = "Differentiated by State") +
-  theme_minimal()+
+  geom_sf_text(aes(label = state_name), size = 3, check_overlap = TRUE) +
+  scale_fill_gradient(low = "lightblue", high = "darkblue",na.value = "#767abe", name = "Avg Family Poverty Rate") +  # Custom color scale
+  labs(title = "Average Family Poverty Rate by State", subtitle = "Differentiated by State") +
+  theme_minimal() +
   theme(axis.text = element_blank(), axis.title = element_blank()) +
-  guides(color = FALSE)  
+  guides(color = FALSE) 
+ 
 
 ```
-:::
-:::
 
 ## Plot 2
 
@@ -344,12 +353,12 @@ merged_data_childcare_costs_state <- left_join(states_map, average_childcare_cos
 
 ggplot(data = merged_data_childcare_costs_state, aes(fill = avg_childcare_costs_state, color = state_name)) +
   geom_sf(size = 0.2) +
-  geom_sf_text(aes(label = state_name), color="white", size = 3, check_overlap = TRUE)+
-  scale_fill_viridis_c() +
+  geom_sf_text(aes(label = state_name), size = 3, check_overlap = TRUE) +
+  scale_fill_gradient(low = "lightgreen", high = "yellow", na.value="#d0f75e", name = "Avg Childcare Costs") +  # Custom color scale
   labs(title = "Average Cumulative Childcare Costs by State", subtitle = "Differentiated by State") +
   theme_minimal() +
   theme(axis.text = element_blank(), axis.title = element_blank()) +
-  guides(color = FALSE)  
+  guides(color = FALSE)
 
 ```
 
@@ -359,18 +368,38 @@ ggplot(data = merged_data_childcare_costs_state, aes(fill = avg_childcare_costs_
 
 # 3rd graph
 
-correlation_data <- merge(average_poverty_state, average_childcare_costs_state, by = "state_name")
+# correlation_data <- merge(average_poverty_state, average_childcare_costs_state, by = "state_name")
 
-states_map <- get_urbn_map("states", sf = TRUE)
+# states_map <- get_urbn_map("states", sf = TRUE)
 
-# Merged data
-merged_data_correlation <- left_join(states_map, correlation_data, by = c("state_name" = "state_name"))
+# # Merged data
+# merged_data_correlation <- left_join(states_map, correlation_data, by = c("state_name" = "state_name"))
 
-ggplot(data = merged_data_correlation, aes(fill = avg_pr_f_state, color = avg_childcare_costs_state)) +
-  geom_sf(size = 0.2) +
-  geom_sf_text(aes(label = state_name), color="white", size = 3, check_overlap = TRUE)+
-  scale_fill_viridis_c() +
-  labs(title = "Correlation between Family Poverty Rate\nand Childcare Costs by State") +
+# ggplot(data = merged_data_correlation, aes(fill = avg_pr_f_state, color = avg_childcare_costs_state)) +
+#   geom_sf(size = 0.2) +
+#   geom_sf_text(aes(label = state_name), size = 3, check_overlap = TRUE)+
+#   scale_fill_viridis_c() +
+#   labs(title = "Correlation between Family Poverty Rate\nand Childcare Costs by State") +
+#   theme_minimal()
+
+# Assuming counties_data contains both county_fips_code and state_name
+averaged_unemployment <- averaged_unemployment %>%
+  left_join(counties_data %>% select(county_fips_code, state_name), by = "county_fips_code")
+
+averaged_unemployment_state <- averaged_unemployment %>%
+  group_by(state_name) %>%
+  summarise(mean_unemployment = mean(mean_unr_16, na.rm = TRUE))
+
+
+merged_data <- inner_join(averaged_unemployment_state, average_childcare_costs_state, by = "state_name")
+
+# Create the correlation graph
+ggplot(merged_data, aes(x = mean_unemployment, y = avg_childcare_costs_state)) +
+  geom_jitter(alpha = 0.5, width = 0.2, height = 0.2) +  # Adjust alpha for transparency
+  # geom_smooth(method = "lm", color = "blue") +
+  labs(x = "Average Unemployment Rate (%)", 
+       y = "Average Childcare Costs (USD)", 
+       title = "Relationship between Unemployment Rate and Childcare Costs") +
   theme_minimal()
 
 ```
