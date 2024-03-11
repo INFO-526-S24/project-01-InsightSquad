@@ -13,7 +13,6 @@ execute:
 ---
 
 ```{r}
-
 #| label: load-packages
 #| include: false
 
@@ -28,13 +27,18 @@ pacman::p_load(tidymodels,
                usmap,
                ggpointdensity,
                viridis,
-               ggpubr,
+               ggpubr
                
                )
 
 devtools::install_github("UrbanInstitute/urbnmapr")
 library(urbnmapr)
+```
 
+```{r}
+
+#| label: setup
+#| include: false
 
 # Plot theme
 ggplot2::theme_set(ggplot2::theme_minimal(base_size = 11))
@@ -46,8 +50,6 @@ knitr::opts_chunk$set(
   fig.width = 6, 
   fig.asp = 0.618 
   )
-
-
 child_cost <- read.csv(here('Data','childcare_costs.csv'))
 counties <- read.csv(here('Data','counties.csv'))
 
@@ -164,22 +166,19 @@ plot_state_unemployment_rate <- function(data, value_col, title) {
 
 ```
 
-```{r}
-
-```
-
 #### 
 
 ::: columns
 ::: {.column width="50%"}
-```{r, message=FALSE, warning=FALSE, echo=false}
+```{r, message=FALSE, warning=FALSE}
 male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_m", "Average Male Unemployment Rate by State")
 print(male_map)
 ```
 :::
 
 ::: {.column width="50%"}
-```{female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")}
+```{r, message=FALSE, warning=FALSE}
+female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")
 print(female_map)
 ```
 :::
