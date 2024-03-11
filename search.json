@@ -133,25 +133,18 @@
     "text": "APPROACH\n\n\nOur analysis approach involves creating spatial maps to visualize mean unemployment rates across the US for both genders.\n\nWe also calculate the correlation between overall unemployment rates and individual poverty levels at the state level.\n\nSpatial maps are chosen to provide a clear visual representation of regional disparities in unemployment rates and their relationship with poverty."
   },
   {
-    "objectID": "presentation.html#plots-of-question-1",
-    "href": "presentation.html#plots-of-question-1",
+    "objectID": "presentation.html#average-unemployment-rates-in-us",
+    "href": "presentation.html#average-unemployment-rates-in-us",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plots of Question 1",
-    "text": "Plots of Question 1"
+    "section": "Average unemployment Rates in US",
+    "text": "Average unemployment Rates in US"
   },
   {
-    "objectID": "presentation.html#plot-2",
-    "href": "presentation.html#plot-2",
+    "objectID": "presentation.html#unemployment-rates-by-gender",
+    "href": "presentation.html#unemployment-rates-by-gender",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plot 2",
-    "text": "Plot 2"
-  },
-  {
-    "objectID": "presentation.html#plot-3",
-    "href": "presentation.html#plot-3",
-    "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plot 3",
-    "text": "Plot 3"
+    "section": "Unemployment Rates by Gender",
+    "text": "Unemployment Rates by Gender\n\n\n\nThese plots show the distribution of unemployment rates by gender throughout the United States.\nHigh childcare costs can lead to increased unemployment rates\nIt has been observed that women exhibit a higher employment rate."
   },
   {
     "objectID": "presentation.html#scatter-plot",
@@ -182,32 +175,32 @@
     "text": "Approach for Question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs, visualized through spatial maps."
   },
   {
-    "objectID": "presentation.html#plots-of-question-2",
-    "href": "presentation.html#plots-of-question-2",
+    "objectID": "presentation.html#average-family-poverty-rate-at-county-level",
+    "href": "presentation.html#average-family-poverty-rate-at-county-level",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plots of Question 2",
-    "text": "Plots of Question 2\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
+    "section": "Average family poverty rate at county level",
+    "text": "Average family poverty rate at county level\n\n# Calculate average family poverty rate at state level\naverage_poverty_state &lt;- merged_data_county %&gt;%\n  group_by(state_name) %&gt;%\n  summarise(avg_pr_f_state = mean(avg_pr_f, na.rm = TRUE))"
   },
   {
-    "objectID": "presentation.html#plot-2-1",
-    "href": "presentation.html#plot-2-1",
+    "objectID": "presentation.html#cumulative-childcare-costs-by-state",
+    "href": "presentation.html#cumulative-childcare-costs-by-state",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plot 2",
-    "text": "Plot 2"
+    "section": "Cumulative Childcare Costs by State",
+    "text": "Cumulative Childcare Costs by State"
   },
   {
-    "objectID": "presentation.html#plot-3-1",
-    "href": "presentation.html#plot-3-1",
+    "objectID": "presentation.html#correlation-unemployment-rate-and-childcare-costs",
+    "href": "presentation.html#correlation-unemployment-rate-and-childcare-costs",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Plot 3",
-    "text": "Plot 3"
+    "section": "Correlation Unemployment Rate and Childcare Costs",
+    "text": "Correlation Unemployment Rate and Childcare Costs"
   },
   {
     "objectID": "presentation.html#conclusion",
     "href": "presentation.html#conclusion",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "CONCLUSION",
-    "text": "CONCLUSION\n\n\nGender and Regional Unemployment Disparities: Highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.\nLink Between Unemployment and Poverty: Showed a strong relationship between unemployment and poverty, stressing the need for focused support\nChildcare Costs Affecting Family Poverty: Identified regions where high childcare costs contribute significantly to family poverty.\nDirections for Future Research and Policies: Suggested using predictive models and expanding research to better inform policies that support families."
+    "text": "CONCLUSION\n\n\nThe Gender and Regional Unemployment Disparities highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.\nLink Between Unemployment and Poverty showed a strong relationship between the rates, stressing the need for focused support.\nThe Childcare Costs Affecting Family Poverty identified regions where high childcare costs contribute significantly to family poverty."
   },
   {
     "objectID": "presentation.html#future-enhancements",
@@ -217,10 +210,10 @@
     "text": "FUTURE ENHANCEMENTS\n\n\nTime Series Analysis: Explore trends and changes in childcare costs, unemployment, and poverty over time to identify patterns or shifts due to economic cycles or policy changes.\nMachine Learning Predictions: Use machine learning to predict future trends in unemployment, poverty levels, and childcare costs, aiding policymakers in decision-making.\nPolicy Impact Assessment: Examine the effectiveness of specific policies (like childcare subsidies or tax credits) on reducing unemployment and poverty, identifying successful strategies.\nAdditional Socio-economic Variables: Incorporate variables such as education, healthcare access, and housing affordability to provide a comprehensive view of factors affecting family well-being."
   },
   {
-    "objectID": "presentation.html#feeling-adventurous",
-    "href": "presentation.html#feeling-adventurous",
+    "objectID": "presentation.html#thank-you",
+    "href": "presentation.html#thank-you",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
-    "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+    "section": "Thank You",
+    "text": "Thank You\n!Image"
   }
 ]
