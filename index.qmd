@@ -3,7 +3,7 @@ title: "Childcare Cost Analysis"
 subtitle: "INFO 526 - Project 1"
 author:
   - name: "**Team InsightSquad** - Mohammad Farmani, Narasimha Vardhan Rachaputi, Amaan"
-  - name: "Devendran, Shreemithra, Gowtham"
+  - name: ",Devendran, Shreemithra, Gowtham"
 format: html
 editor: visual
 execute:
@@ -60,11 +60,17 @@ childcare_data <- child_cost
 
 ## Abstract
 
-This data visualization project  study into the interplay of childcare costs, unemployment rates, and poverty levels across diverse locales within the United States. Central to this exploration are two pivotal datasets: the National Database of Childcare Prices (NDCP) spanning a decade (2008-2018) and a robust Counties Dataset, which together encapsulate the multifaceted economic landscape on a granular level. The NDCP provides detailed childcare pricing information, differentiated by service provider and age group, while the Counties Dataset enriches this with vital geographic and demographic context. Through rigorous data analysis, the proposed study aims to unearth patterns and establish correlations, shedding light on potential covert connections between these critical socioeconomic factors. This exploration is poised to yield nuanced insights into the socioeconomic fabric that shapes community welfare, potentially guiding policy development and interventions designed to bolster economic resilience and family support structures across the nation.
+The project investigates the intricate dynamics between childcare costs, unemployment rates, and poverty levels across various regions in the United States. Utilizing two primary datasets—the National Database of Childcare Prices (NDCP) and a comprehensive Counties Dataset—the analysis employs spatial mapping techniques to visualize mean unemployment rates and family poverty rates, as well as correlations between unemployment rates and poverty levels at the county and state levels. The findings reveal significant regional variations in unemployment rates, highlighting gender disparities, and underscore the correlation between unemployment rates and poverty levels. Furthermore, the project identifies regions with elevated family poverty rates and explores the relationship between family poverty rates and cumulative childcare costs. The results emphasize the economic challenges faced by families, especially in areas where childcare expenses intersect with high poverty rates. The project concludes with insights into future trends and the potential for integrating predictive modeling techniques and qualitative research methods to inform more effective policy interventions aimed at supporting families across the nation.
 
 ## Introduction
 
-The objective of this proposal is to explore the complex dynamics between childcare costs, unemployment rates, and poverty levels across various locations in the United States. By utilizing two main datasets—the National Database of Childcare Prices (NDCP) and a comprehensive Counties Dataset—we aim to uncover patterns and correlations that can inform us about any hidden relationship between these variables. The NDCP dataset, spanning from 2008 to 2018, offers an unparalleled look at childcare prices across the state level, categorized by provider type and age groups, while the Counties Dataset provides essential geographical and demographic insights.
+The United States faces persistent challenges related to childcare affordability, unemployment rates, and poverty levels, which have profound implications for family well-being and economic stability. Understanding the complex interplay between these factors is crucial for policymakers, researchers, and practitioners seeking to develop effective interventions to support families and communities.
+
+This project aims to investigate the multifaceted relationship between childcare costs, unemployment rates, and poverty levels across diverse regions in the United States. Two primary datasets are utilized: the National Database of Childcare Prices (NDCP), providing comprehensive childcare price data spanning from 2008 to 2018, and a Counties Dataset offering geographical and demographic insights.
+
+The analysis approach involves utilizing spatial mapping techniques to visualize mean unemployment rates, family poverty rates, and correlations between unemployment rates and poverty levels at both the county and state levels. By leveraging these datasets and visualization methods, the project seeks to uncover regional disparities in unemployment rates, gender discrepancies, and the economic burden faced by families due to childcare expenses.
+
+The insights generated from this investigation have the potential to inform policymakers, researchers, and stakeholders about the socio-economic challenges faced by families across different regions of the United States. By understanding these dynamics, policymakers can develop targeted interventions to alleviate economic hardships and promote greater equity and prosperity for families nationwide.
 
 ## Questions
 
