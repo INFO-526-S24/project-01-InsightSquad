@@ -408,10 +408,12 @@ ggplot(merged_data, aes(x = mean_unemployment, y = avg_childcare_costs_state)) +
 ## CONCLUSION
 
 :::incremental
-- Gender and Regional Unemployment Disparities: Highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.
-- Link Between Unemployment and Poverty: Showed a strong relationship between unemployment and poverty, stressing the need for focused support
-- Childcare Costs Affecting Family Poverty: Identified regions where high childcare costs contribute significantly to family poverty.
-- Directions for Future Research and Policies: Suggested using predictive models and expanding research to better inform policies that support families.
+- The Gender and Regional Unemployment Disparities highlighted notable differences in unemployment by gender and region, underscoring diverse economic challenges.
+
+- Link Between Unemployment and Poverty showed a strong relationship between the rates, stressing the need for focused support.
+
+- The Childcare Costs Affecting Family Poverty identified regions where high childcare costs contribute significantly to family poverty.
+
 
 :::
 
