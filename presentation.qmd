@@ -294,7 +294,7 @@ Which places have higher rates of family poverty? Is there a relationship betwee
 
 -   Analyzing the link between family poverty rates and childcare costs.
 -   Creating spatial maps to show average family poverty rates across the US.
--   Examining state-level correlations between poverty rates and childcare costs, visualized through spatial maps.
+-   Examining state-level correlations between poverty rates and childcare costs.
 
 ## Average family poverty rate at county level
 
