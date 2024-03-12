@@ -105,6 +105,13 @@
     "text": "Discussion\nThe proposed analysis plan is designed to dissect the intricate web of economic factors influencing family well-being and child-rearing costs. By delving into the spatial and statistical relationships between unemployment, poverty, and childcare expenses, we anticipate uncovering regional disparities and potential areas for policy intervention. The findings from this analysis could provide a robust evidence base for developing targeted strategies to alleviate the economic pressures on families, particularly in regions where the burden of childcare costs significantly intersects with high unemployment and poverty rates. Through this investigation, we aim to contribute to the broader dialogue on enhancing economic security and access to quality childcare, thereby supporting the well-being of families across the United States."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by The Insight Squad For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nShreemithra Naveen: 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.\nMohammad Farmani: 2nd year PhD student in Hydrology and Atmospheric Sciences in University of Arizona.\nNarasimha Vardhan Rachaputi: 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.\nDevendran Vemula : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.\nAmaan Mulla : 1st year graduate student pursuing Human Centered Computing major, School of Information in University of Arizona.\nGowtham Gopalakrishnan : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona."
+  },
+  {
     "objectID": "presentation.html#introduction",
     "href": "presentation.html#introduction",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
@@ -165,7 +172,7 @@
     "href": "presentation.html#approach-for-question-2",
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Approach for Question 2",
-    "text": "Approach for Question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs, visualized through spatial maps."
+    "text": "Approach for Question 2\n\nAnalyzing the link between family poverty rates and childcare costs.\nCreating spatial maps to show average family poverty rates across the US.\nExamining state-level correlations between poverty rates and childcare costs."
   },
   {
     "objectID": "presentation.html#average-family-poverty-rate-at-county-level",
@@ -208,12 +215,5 @@
     "title": "Childcare Costs, Unemployment, and Poverty Dynamics in the US",
     "section": "Thank You",
     "text": "Thank You"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by The Insight Squad For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nShreemithra Naveen: 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.\nMohammad Farmani: 2nd year PhD student in Hydrology and Atmospheric Sciences in University of Arizona.\nNarasimha Vardhan Rachaputi: 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.\nDevendran Vemula : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona.\nAmaan Mulla : 1st year graduate student pursuing Human Centered Computing major, School of Information in University of Arizona.\nGowtham Gopalakrishnan : 1st year graduate student pursuing Data Science major, School of Information in University of Arizona."
   }
 ]
