@@ -95,7 +95,7 @@
     "href": "index.html#section-3",
     "title": "Childcare Cost Analysis",
     "section": "",
-    "text": "old-style crs object detected; please recreate object with a recent sf::st_crs()"
+    "text": "Warning: Removed 2 rows containing missing values (`geom_point()`)."
   },
   {
     "objectID": "index.html#section-4",
