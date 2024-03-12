@@ -90,8 +90,6 @@ This section outlines our methodology for investigating the relationships betwee
 #### Analysis
 
 ```{r}
-
-
 # Calculate average unemployment
 averaged_unemployment <- child_cost %>%
   group_by(county_fips_code) %>%
@@ -108,29 +106,32 @@ state_unemployment <- geo_data %>%
   group_by(state_abbreviation) %>%
   summarise(mean_unr_state = mean(mean_unr_16, na.rm = TRUE))
 
+
 # Rename 'state_abbreviation' to 'state' for compatibility with usmap
 state_unemployment <- state_unemployment %>%
   rename(state = state_abbreviation)
 
 # Plot the state-level map
-state_map <- plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "states") +
-  scale_fill_continuous(name = "Avg Unemployment Rate", low = "green", high = "red", na.value = "grey50") +
+plot_usmap(data = state_unemployment, values = "mean_unr_state", regions = "states") +
+  scale_fill_continuous(name = "Avg State Unemployment",low = "lightblue", high = "navy", na.value = "lightblue") +
   labs(title = "Average Unemployment Rate by State",
-       subtitle = "Based on 'unr_16' variable from Childcare Costs Dataset") +
+       subtitle = "Based on Data from Childcare Costs") +
   theme_minimal() +
   theme(legend.position = "bottom",
         plot.title = element_text(hjust = 0.5, size = 16),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         legend.title = element_text(size = 12),
-        legend.text = element_text(size = 10))
-
-# Display the state-level map
-print(state_map)
+        legend.text = element_text(size = 10),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "white", colour = NA),
+        plot.background = element_rect(fill = "white", colour = NA),
+        axis.ticks = element_blank(), 
+        axis.title.x = element_blank(), 
+        axis.title.y = element_blank())
 ```
 
 ```{r}
-
-
 # gender specific unemployment 
 averaged_gender_unemployment <- child_cost %>%
   group_by(county_fips_code) %>%
@@ -156,20 +157,32 @@ state_unemployment_gender <- geo_data_gender %>%
 # plot state-level map for gender-specific unemployment rates
 plot_state_unemployment_rate <- function(data, value_col, title) {
   plot_usmap(data = data, values = value_col, regions = "states") +
-    scale_fill_continuous(name = title, low = "green", high = "red", na.value = "grey50") +
+    scale_fill_continuous(name = title, low = "lightblue", high = "navy", na.value = "lightblue") +
     labs(title = title,
-         subtitle = "Based on '16 data from Childcare Costs Dataset") +
-    theme_minimal() +
+         subtitle = "Gender-specific unemployment rates in US") +
+    theme_void() +
     theme(legend.position = "bottom",
           plot.title = element_text(hjust = 0.5, size = 14),
           plot.subtitle = element_text(hjust = 0.5, size = 10),
           legend.title = element_text(size = 10),
-          legend.text = element_text(size = 8))
+          legend.text = element_text(size = 8),
+          panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "white", colour = NA),
+        plot.background = element_rect(fill = "white", colour = NA),
+        axis.ticks = element_blank(), 
+        axis.title.x = element_blank(), 
+        axis.title.y = element_blank())
 }
 
 # Plotting for male and female unemployment rates
 
 
+male_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_m", "Average Male Unemployment Rate by State")
+female_map <- plot_state_unemployment_rate(state_unemployment_gender, "avg_unr_state_f", "Average Female Unemployment Rate by State")
+
+print(male_map)
+print(female_map)
 ```
 
 #### 
@@ -207,7 +220,7 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
   geom_abline (slope=1, linetype = "dashed", color="Red") +
   scale_color_viridis() +
   labs(title = "Family Poverty vs Unemployment Rate",
-       subtitle = "Considering all the counties",
+       subtitle = "Considering all the States",
        x = 'Family Poverty(%)',
        y= 'Unemployment Rate (%)',
        color = "Density\n"
@@ -220,7 +233,7 @@ ggplot(combine,aes(x = pr_p, y = unr_16)) +
 The plot suggests a positive correlation, indicated by the correlation coefficient R of 0.6 and a highly significant p-value (\<2.2×10−16), meaning there's a statistically significant relationship between higher levels of poverty and higher unemployment rates. The density of the points is visualized by color intensity, with the most densely populated area being where family poverty and unemployment rates are relatively low.
 
 ```{r}
-#| label: Corelation_spatial
+#| label: COR_SOATIAL
 child_cost <- read.csv(here('Data','childcare_costs.csv'))
 counties <- read.csv(here('Data','counties.csv'))
 
@@ -287,6 +300,18 @@ This section outlines our methodology for investigating the relationships betwee
 
 ::: columns
 ::: {.column width="50%"}
+```{r}
+# Calculate average family poverty rate at county level
+average_poverty_county <- childcare_data %>%
+  group_by(county_fips_code) %>%
+  summarise(avg_pr_f = mean(pr_f, na.rm = TRUE)) %>%
+  mutate(county_fips_code = as.character(county_fips_code))
+
+# Merge with US counties map
+counties_map <- get_urbn_map("counties")
+
+merged_data_county <- left_join(counties_map, average_poverty_county, by = c("county_fips" = "county_fips_code"))
+```
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 # Calculate average family poverty rate at county level
 average_poverty_county <- childcare_data %>%
