@@ -95,7 +95,7 @@
     "href": "index.html#section-3",
     "title": "Childcare Cost Analysis",
     "section": "",
-    "text": "Warning: Removed 2 rows containing missing values (`geom_point()`)."
+    "text": "Warning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
   },
   {
     "objectID": "index.html#section-4",
